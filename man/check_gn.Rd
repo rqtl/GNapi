@@ -6,6 +6,9 @@
 \usage{
 check_gn(url = "http://test-gn2.genenetwork.org")
 }
+\arguments{
+\item{url}{URL for GeneNetwork}
+}
 \value{
 Version number (as a character string)
 }

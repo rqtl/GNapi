@@ -2,6 +2,8 @@
 #'
 #' Check if GeneNetwork is live
 #'
+#' @param url URL for GeneNetwork
+#'
 #' @return Version number (as a character string)
 #'
 #' @importFrom httr GET content stop_for_status
