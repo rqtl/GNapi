@@ -4,7 +4,7 @@
 \alias{check_gn}
 \title{Check if GeneNetwork is live}
 \usage{
-check_gn(url = "http://test-gn2.genenetwork.org")
+check_gn(url = "http://test-gn2.genenetwork.org/api_pre1/")
 }
 \arguments{
 \item{url}{URL for GeneNetwork}

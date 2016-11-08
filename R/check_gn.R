@@ -9,9 +9,8 @@
 #' @importFrom httr GET content stop_for_status
 #' @export
 check_gn <-
-    function(url="http://test-gn2.genenetwork.org")
+    function(url="http://test-gn2.genenetwork.org/api_pre1/")
 {
-    url <- paste0(url, "/api_pre1/")
     result <- httr::GET(url)
 
     listresult <- httr::content(result)
