@@ -51,3 +51,35 @@ info_dataset <-
 
     listresult
 }
+
+#' Get meta information for genotypes
+#'
+#' Get meta information for the genotypes for a cross
+#'
+#' @param cross Cross name as a single character string
+#' @param url URL for GeneNetwork API
+#'
+#' @return Matrix with genotypes; rows are markers, columns are strains
+#'
+#' @importFrom httr GET content stop_for_status
+#' @export
+#'
+#' @examples
+#' info_geno("BXD")
+info_geno <-
+    function(cross, url="http://test-gn2.genenetwork.org/api_pre1/")
+{
+    # call info_cross to determine species
+    info <- info_cross(cross, url)
+    if(!("species" %in% names(info)))
+        stop("Can't find species for cross ", cross)
+    species <- info$species
+
+    # now call to get genotypes
+    result <- httr::GET(paste0(url, "genotype/", species, "/",
+                               cross, ".json"))
+    listresult <- httr::content(result)
+    stop_for_status(result)
+
+    listresult
+}
