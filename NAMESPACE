@@ -2,6 +2,7 @@
 
 export(check_gn)
 export(get_geno)
+export(get_gmap)
 export(get_pheno)
 export(get_probeset)
 export(info_cross)
