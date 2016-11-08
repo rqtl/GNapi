@@ -18,6 +18,12 @@ get_pheno <-
     # dataset should be a single character string
     stopifnot(!is.null(dataset), length(dataset) == 1,  is.character(dataset))
 
+    # first check that it's the proper kind
+    info <- info_dataset(dataset, url)
+    if(!("dataset" %in% names(info)) || info$dataset != "phenotype")
+        stop(dataset, " not of classic type")
+
+    # get dataset
     result <- httr::GET(paste0(url, "trait/", dataset, ".json"))
     listresult <- httr::content(result)
     httr::stop_for_status(result)

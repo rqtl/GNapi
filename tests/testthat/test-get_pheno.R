@@ -12,3 +12,9 @@ test_that("get_pheno works", {
     expect_true(is.numeric(df[,4]))
 
 })
+
+test_that("get_pheno gives error for mRNA data", {
+
+    expect_error( get_pheno("HC_U_0304_R") )
+
+})
