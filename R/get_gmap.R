@@ -25,8 +25,8 @@ get_gmap <-
     # now call to get map
     result <- httr::GET(paste0(url, "genotype/", species, "/",
                                cross, "/gmap.csv"))
-    df <- httr::content(result, encoding="utf-8", col_types=list(.default="c"))
     stop_for_status(result)
 
+    df <- httr::content(result, encoding="utf-8", col_types=list(.default="c"))
     as.data.frame(df)
 }

@@ -25,9 +25,9 @@ get_geno <-
     # now call to get genotypes
     result <- httr::GET(paste0(url, "genotype/", species, "/",
                                cross, "/geno.csv"))
-    df <- httr::content(result, encoding="utf-8", col_types=list(.default="c"))
     stop_for_status(result)
 
+    df <- httr::content(result, encoding="utf-8", col_types=list(.default="c"))
     df <- as.data.frame(df)
     rownames(df) <- df[,1]
     df[,-1,drop=FALSE]

@@ -15,8 +15,8 @@ list_species <-
     function(url="http://test-gn2.genenetwork.org/api_pre1/")
 {
     result <- httr::GET(paste0(url, "species"))
-    listresult <- httr::content(result)
     httr::stop_for_status(result)
+    listresult <- httr::content(result)
 
     # convert to data frame
     data.frame(id = grab_elements(listresult, 1, as.numeric(NA)),
@@ -46,8 +46,8 @@ list_datasets <-
     stopifnot(!is.null(cross), length(cross) == 1)
 
     result <- httr::GET(paste0(url, "datasets/", cross))
-    listresult <- httr::content(result)
     httr::stop_for_status(result)
+    listresult <- httr::content(result)
 
     data.frame(id=vapply(listresult, "[[", 0, 1),
                name=grab_elements(listresult, 2),

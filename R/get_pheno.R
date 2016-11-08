@@ -25,8 +25,8 @@ get_pheno <-
 
     # get dataset
     result <- httr::GET(paste0(url, "trait/", dataset, ".json"))
-    listresult <- httr::content(result)
     httr::stop_for_status(result)
+    listresult <- httr::content(result)
 
     data.frame(id=grab_elements(listresult, 1, as.numeric(NA)),
                strain=grab_elements(listresult, 2, as.character(NA)),
@@ -64,8 +64,8 @@ list_probesets <-
 
     url <- paste0(url, "phenotypes/", dataset, ".json")
     result <- httr::GET(url, list(start=start, stop=stop))
-    listresult <- httr::content(result)
     httr::stop_for_status(result)
+    listresult <- httr::content(result)
 
     listresult
 }
@@ -102,8 +102,8 @@ get_probeset <-
 
     url <- paste0(url, "trait/", dataset, "/", probeset, ".json")
     result <- httr::GET(url)
-    listresult <- httr::content(result)
     httr::stop_for_status(result)
+    listresult <- httr::content(result)
 
     data.frame(id=grab_elements(listresult, 1, as.numeric(NA)),
                strain=grab_elements(listresult, 2, as.character(NA)),

@@ -19,10 +19,9 @@ info_cross <-
     stopifnot(!is.null(cross), length(cross) == 1)
 
     result <- httr::GET(paste0(url, "group/", cross, ".json"))
-    listresult <- httr::content(result)
     httr::stop_for_status(result)
 
-    listresult
+    httr::content(result)
 }
 
 #' Get info about a dataset
@@ -46,10 +45,9 @@ info_dataset <-
     stopifnot(!is.null(dataset), length(dataset) == 1)
 
     result <- httr::GET(paste0(url, "dataset/", dataset, ".json"))
-    listresult <- httr::content(result)
     httr::stop_for_status(result)
 
-    listresult
+    httr::content(result)
 }
 
 #' Get meta information for genotypes
@@ -78,8 +76,7 @@ info_geno <-
     # now call to get genotypes
     result <- httr::GET(paste0(url, "genotype/", species, "/",
                                cross, ".json"))
-    listresult <- httr::content(result)
     stop_for_status(result)
 
-    listresult
+    httr::content(result)
 }

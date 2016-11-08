@@ -15,10 +15,8 @@ check_gn <-
     function(url="http://test-gn2.genenetwork.org/api_pre1/")
 {
     result <- httr::GET(url)
-
-    listresult <- httr::content(result)
-
     httr::stop_for_status(result)
+    listresult <- httr::content(result)
 
     nam <- names(listresult)
     if(length(nam)==2 && all(sort(nam) == c("I am", "version"))) {
