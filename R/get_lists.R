@@ -19,7 +19,7 @@ list_species <-
     httr::stop_for_status(result)
 
     # convert to data frame
-    data.frame(number = grab_elements(listresult, 1, as.numeric(NA)),
+    data.frame(id = grab_elements(listresult, 1, as.numeric(NA)),
                common = grab_elements(listresult, 2, as.character(NA)),
                species =grab_elements(listresult, 3, as.character(NA)),
                stringsAsFactors=FALSE)
