@@ -8,6 +8,9 @@
 #'
 #' @importFrom httr GET content stop_for_status
 #' @export
+#'
+#' @examples
+#' check_gn()
 check_gn <-
     function(url="http://test-gn2.genenetwork.org/api_pre1/")
 {

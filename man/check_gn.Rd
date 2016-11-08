@@ -15,4 +15,7 @@ Version number (as a character string)
 \description{
 Check if GeneNetwork is live
 }
+\examples{
+check_gn()
+}
 
