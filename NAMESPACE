@@ -2,9 +2,11 @@
 
 export(check_gn)
 export(get_pheno)
+export(get_probeset)
 export(info_cross)
 export(info_dataset)
 export(list_datasets)
+export(list_probesets)
 export(list_species)
 importFrom(httr,GET)
 importFrom(httr,content)
