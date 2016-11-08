@@ -1,6 +1,6 @@
 Package: GNapi
-Version: 0.1-1
-Date: 2016-11-07
+Version: 0.1-2
+Date: 2016-11-08
 Title: Connection to the GeneNetwork API
 Description: Tools for connecting to the GeneNetwork API.
 Author: Karl W Broman
