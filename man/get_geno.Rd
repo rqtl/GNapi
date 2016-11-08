@@ -12,7 +12,7 @@ get_geno(cross, url = "http://test-gn2.genenetwork.org/api_pre1/")
 \item{url}{URL for GeneNetwork API}
 }
 \value{
-Matrix with genotypes; rows are markers, columns are strains
+Data frame with genotypes; rows are markers, columns are strains
 }
 \description{
 Get genotype data for a given cross

@@ -5,7 +5,7 @@
 #' @param cross Cross name as a single character string
 #' @param url URL for GeneNetwork API
 #'
-#' @return Matrix with genotypes; rows are markers, columns are strains
+#' @return Data frame with genotypes; rows are markers, columns are strains
 #'
 #' @importFrom httr GET content stop_for_status
 #' @importFrom readr read_csv
