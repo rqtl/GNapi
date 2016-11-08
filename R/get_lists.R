@@ -19,8 +19,38 @@ list_species <-
     httr::stop_for_status(result)
 
     # convert to data frame
-    data.frame(number = vapply(listresult, "[[", 0, 1),
-               common = vapply(listresult, "[[", "", 2),
-               species =vapply(listresult, "[[", "", 3),
+    data.frame(number = grab_elements(listresult, 1, as.numeric(NA)),
+               common = grab_elements(listresult, 2, as.character(NA)),
+               species =grab_elements(listresult, 3, as.character(NA)),
+               stringsAsFactors=FALSE)
+}
+
+#' List available datasets for a cross
+#'
+#' List available datasets for a cross.
+#'
+#' @param cross Name of cross, as single character string
+#' @param url URL for GeneNetwork API
+#'
+#' @return A data frame
+#'
+#' @importFrom httr GET content stop_for_status
+#' @export
+#'
+#' @examples
+#' list_datasets("BXD")
+list_datasets <-
+    function(cross, url="http://test-gn2.genenetwork.org/api_pre1/")
+{
+    # cross should be a single character string
+    stopifnot(!is.null(cross), length(cross) == 1,  is.character(cross))
+
+    result <- httr::GET(paste0(url, "datasets/", cross))
+    listresult <- httr::content(result)
+    httr::stop_for_status(result)
+
+    data.frame(number=vapply(listresult, "[[", 0, 1),
+               name=grab_elements(listresult, 2),
+               description=grab_elements(listresult, 3),
                stringsAsFactors=FALSE)
 }
