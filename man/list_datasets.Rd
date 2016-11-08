@@ -12,7 +12,7 @@ list_datasets(cross, url = "http://test-gn2.genenetwork.org/api_pre1/")
 \item{url}{URL for GeneNetwork API}
 }
 \value{
-A data frame
+A data frame with dataset ID, name, and description
 }
 \description{
 List available datasets for a cross.

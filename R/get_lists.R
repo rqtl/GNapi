@@ -32,7 +32,7 @@ list_species <-
 #' @param cross Name of cross, as single character string
 #' @param url URL for GeneNetwork API
 #'
-#' @return A data frame
+#' @return A data frame with dataset ID, name, and description
 #'
 #' @importFrom httr GET content stop_for_status
 #' @export
@@ -49,7 +49,7 @@ list_datasets <-
     listresult <- httr::content(result)
     httr::stop_for_status(result)
 
-    data.frame(number=vapply(listresult, "[[", 0, 1),
+    data.frame(id=vapply(listresult, "[[", 0, 1),
                name=grab_elements(listresult, 2),
                description=grab_elements(listresult, 3),
                stringsAsFactors=FALSE)
