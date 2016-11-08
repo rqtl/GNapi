@@ -16,7 +16,7 @@ info_cross <-
     function(cross, url="http://test-gn2.genenetwork.org/api_pre1/")
 {
     # cross should be a single character string
-    stopifnot(!is.null(cross), length(cross) == 1,  is.character(cross))
+    stopifnot(!is.null(cross), length(cross) == 1)
 
     result <- httr::GET(paste0(url, "group/", cross, ".json"))
     listresult <- httr::content(result)
@@ -29,7 +29,7 @@ info_cross <-
 #'
 #' Get info about a dataset
 #'
-#' @param cross Name of dataset, as single character string
+#' @param dataset Name of dataset, as single character string
 #' @param url URL for GeneNetwork API
 #'
 #' @return A list
@@ -43,7 +43,7 @@ info_dataset <-
     function(dataset, url="http://test-gn2.genenetwork.org/api_pre1/")
 {
     # dataset should be a single character string
-    stopifnot(!is.null(dataset), length(dataset) == 1,  is.character(dataset))
+    stopifnot(!is.null(dataset), length(dataset) == 1)
 
     result <- httr::GET(paste0(url, "dataset/", dataset, ".json"))
     listresult <- httr::content(result)

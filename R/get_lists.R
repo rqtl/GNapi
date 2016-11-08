@@ -43,7 +43,7 @@ list_datasets <-
     function(cross, url="http://test-gn2.genenetwork.org/api_pre1/")
 {
     # cross should be a single character string
-    stopifnot(!is.null(cross), length(cross) == 1,  is.character(cross))
+    stopifnot(!is.null(cross), length(cross) == 1)
 
     result <- httr::GET(paste0(url, "datasets/", cross))
     listresult <- httr::content(result)

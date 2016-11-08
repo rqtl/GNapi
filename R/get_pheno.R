@@ -16,7 +16,7 @@ get_pheno <-
     function(dataset, url="http://test-gn2.genenetwork.org/api_pre1/")
 {
     # dataset should be a single character string
-    stopifnot(!is.null(dataset), length(dataset) == 1,  is.character(dataset))
+    stopifnot(!is.null(dataset), length(dataset) == 1)
 
     # first check that it's the proper kind
     info <- info_dataset(dataset, url)
@@ -55,7 +55,7 @@ list_probesets <-
     function(dataset, start=NULL, stop=NULL, url="http://test-gn2.genenetwork.org/api_pre1/")
 {
     # dataset should be a single character string
-    stopifnot(!is.null(dataset), length(dataset) == 1,  is.character(dataset))
+    stopifnot(!is.null(dataset), length(dataset) == 1)
 
     # check that dataset is "probeset" type
     info <- info_dataset(dataset, url)
@@ -90,10 +90,10 @@ get_probeset <-
     function(dataset, probeset, url="http://test-gn2.genenetwork.org/api_pre1/")
 {
     # dataset should be a single character string
-    stopifnot(!is.null(dataset), length(dataset) == 1,  is.character(dataset))
+    stopifnot(!is.null(dataset), length(dataset) == 1)
 
     # probeset should be a single character string, too
-    stopifnot(!is.null(probeset), length(probeset) == 1,  is.character(probeset))
+    stopifnot(!is.null(probeset), length(probeset) == 1)
 
     # check that dataset is "probeset" type
     info <- info_dataset(dataset, url)

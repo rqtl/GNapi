@@ -7,9 +7,9 @@
 info_dataset(dataset, url = "http://test-gn2.genenetwork.org/api_pre1/")
 }
 \arguments{
-\item{url}{URL for GeneNetwork API}
+\item{dataset}{Name of dataset, as single character string}
 
-\item{cross}{Name of dataset, as single character string}
+\item{url}{URL for GeneNetwork API}
 }
 \value{
 A list
