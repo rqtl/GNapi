@@ -35,13 +35,11 @@ get_pheno <-
                stringsAsFactors=FALSE)
 }
 
-#' List probesets for a dataset, within some range
+#' List probesets for a dataset
 #'
-#' List probesets for a dataset, within some range
+#' List probesets for a dataset
 #'
 #' @param dataset Name or ID for dataset as a single character string
-#' @param start Starting probeset
-#' @param stop Ending probeset
 #' @param url URL for GeneNetwork API
 #'
 #' @return Data frame with probeset info
@@ -50,9 +48,9 @@ get_pheno <-
 #' @export
 #'
 #' @examples
-#' list_probesets("HC_U_0304_R", 100, 101)
+#' list_probesets("HC_U_0304_R")
 list_probesets <-
-    function(dataset, start=NULL, stop=NULL, url="http://test-gn2.genenetwork.org/api_pre1/")
+    function(dataset, url="http://test-gn2.genenetwork.org/api_pre1/")
 {
     # dataset should be a single character string
     stopifnot(!is.null(dataset), length(dataset) == 1)
@@ -63,7 +61,7 @@ list_probesets <-
         stop(dataset, " not of probeset type")
 
     url <- paste0(url, "phenotypes/", dataset, ".json")
-    result <- httr::GET(url, list(start=start, stop=stop))
+    result <- httr::GET(url)
     httr::stop_for_status(result)
     listresult <- httr::content(result)
 
