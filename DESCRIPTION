@@ -1,20 +1,27 @@
 Package: GNapi
-Version: 0.1-3
-Date: 2016-11-10
+Version: 0.2-1
+Date: 2019-05-26
 Title: Connection to the GeneNetwork API
 Description: Tools for connecting to the GeneNetwork API.
-Author: Karl W Broman
+Author: Karl W Broman [aut, cre] (<https://orcid.org/0000-0002-4914-6671>)
 Maintainer: Karl W Broman <broman@wisc.edu>
+Authors@R: c(person("Karl W", "Broman", role=c("aut", "cre"),
+             email="broman@wisc.edu", comment=c(ORCID = "0000-0002-4914-6671")))
 Depends:
     R (>= 3.1.0)
 Imports:
     httr,
-    readr
+    readr,
+    jsonlite (>= 0.9.17)
 Suggests:
     testthat,
     devtools,
     roxygen2
 License: MIT + file LICENSE
 URL: https://github.com/kbroman/GNapi
+BugReports: https://github.com/kbroman/GNapi/issues
 LazyData: true
-RoxygenNote: 5.0.1
+Encoding: UTF-8
+ByteCompile: true
+RoxygenNote: 6.1.1
+Roxygen: list(markdown=TRUE)

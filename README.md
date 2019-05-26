@@ -23,9 +23,9 @@ Then use `devtools::install_github()` to install R/GNapi.
 
 ### Usage
 
-For an understanding of the the
-[GeneNetwork API](https://github.com/genenetwork/gn_server), see
-[its tutorial](https://github.com/genenetwork/gn_server/blob/master/doc/API.md).
+For an understanding of the
+[GeneNetwork](http://gn2.genenetwork.org) API, see
+[its documentation](https://github.com/zsloan/genenetwork2/blob/master/api_readme.md).
 
 The R/GNapi package has a set of functions for connecting to the
 GeneNetwork API to grab different bits of information or data.

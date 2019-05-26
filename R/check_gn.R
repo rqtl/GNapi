@@ -4,7 +4,7 @@
 #'
 #' @param url URL for GeneNetwork
 #'
-#' @return Version number (as a character string)
+#' @return Character string.
 #'
 #' @importFrom httr GET content stop_for_status
 #' @export
@@ -12,16 +12,17 @@
 #' @examples
 #' check_gn()
 check_gn <-
-    function(url="http://test-gn2.genenetwork.org/api_pre1/")
+    function(url=gnapi_url())
 {
     result <- httr::GET(url)
     httr::stop_for_status(result)
     listresult <- httr::content(result)
 
     nam <- names(listresult)
-    if(length(nam)==2 && all(sort(nam) == c("I am", "version"))) {
-        if(listresult[["I am"]] == "genenetwork")
-            return(listresult$version)
+    if(length(nam)==1 && nam=="hello") {
+        if(listresult[["hello"]] == "world") {
+            return("GN says hello.")
+        }
     }
 
     stop("result not as expected:", listresult)
