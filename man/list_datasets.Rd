@@ -20,4 +20,3 @@ List available datasets for a cross.
 \examples{
 list_datasets("BXD")
 }
-

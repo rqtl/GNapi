@@ -20,4 +20,3 @@ Get genetic map for a given cross
 \examples{
 get_gmap("BXD")
 }
-

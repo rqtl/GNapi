@@ -20,4 +20,3 @@ Get info about a dataset
 \examples{
 info_dataset("HC_U_0304_R")
 }
-

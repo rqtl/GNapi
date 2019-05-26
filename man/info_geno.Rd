@@ -20,4 +20,3 @@ Get meta information for the genotypes for a cross
 \examples{
 info_geno("BXD")
 }
-

@@ -20,4 +20,3 @@ Get info about a cross
 \examples{
 info_cross("BXD")
 }
-

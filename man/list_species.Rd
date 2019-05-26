@@ -18,4 +18,3 @@ Get list of available species
 \examples{
 list_species()
 }
-

@@ -4,7 +4,8 @@
 \alias{list_probesets}
 \title{List probesets for a dataset}
 \usage{
-list_probesets(dataset, url = "http://test-gn2.genenetwork.org/api_pre1/")
+list_probesets(dataset,
+  url = "http://test-gn2.genenetwork.org/api_pre1/")
 }
 \arguments{
 \item{dataset}{Name or ID for dataset as a single character string}
@@ -20,4 +21,3 @@ List probesets for a dataset
 \examples{
 list_probesets("HC_U_0304_R")
 }
-

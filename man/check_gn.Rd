@@ -4,13 +4,13 @@
 \alias{check_gn}
 \title{Check if GeneNetwork is live}
 \usage{
-check_gn(url = "http://test-gn2.genenetwork.org/api_pre1/")
+check_gn(url = gnapi_url())
 }
 \arguments{
 \item{url}{URL for GeneNetwork}
 }
 \value{
-Version number (as a character string)
+Character string.
 }
 \description{
 Check if GeneNetwork is live
@@ -18,4 +18,3 @@ Check if GeneNetwork is live
 \examples{
 check_gn()
 }
-

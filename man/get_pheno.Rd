@@ -20,4 +20,3 @@ Get phenotype data for a dataset
 \examples{
 get_pheno("10001")
 }
-

@@ -20,4 +20,3 @@ Get genotype data for a given cross
 \examples{
 get_geno("BXD")
 }
-
