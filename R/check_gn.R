@@ -14,9 +14,7 @@
 check_gn <-
     function(url=gnapi_url())
 {
-    result <- httr::GET(url)
-    httr::stop_for_status(result)
-    listresult <- httr::content(result)
+    listresult <- query_gn(url=url)
 
     nam <- names(listresult)
     if(length(nam)==1 && nam=="hello") {
