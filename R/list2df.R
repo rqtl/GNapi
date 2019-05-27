@@ -25,5 +25,5 @@ list2df <-
     result <- as.data.frame(result, stringsAsFactors=FALSE)
     names(result) <- names(listresult[[1]])
 
-    result
+    as.data.frame(result)
 }

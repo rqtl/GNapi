@@ -12,7 +12,7 @@ info_datasets(group, url = gnapi_url())
 \item{url}{The URL for the GeneNetwork API}
 }
 \value{
-A list
+A data frame
 }
 \description{
 Get metadata about all datasets for a group

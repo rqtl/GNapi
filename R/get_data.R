@@ -21,7 +21,7 @@ get_pheno <-
     stopifnot(length(dataset)==1)
 
     if(is.null(trait)) {
-        result <- query_gn(paste0("sample_data/", dataset), url)
+        result <- as.data.frame( query_gn(paste0("sample_data/", dataset), url) )
     } else {
         stopifnot(length(trait)==1)
         result <- query_gn(paste0("sample_data/", dataset, "/", trait), url)

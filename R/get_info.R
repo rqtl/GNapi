@@ -31,7 +31,7 @@ info_dataset <-
 #' @param group Name of a group of datasets
 #' @param url The URL for the GeneNetwork API
 #'
-#' @return A list
+#' @return A data frame
 #'
 #' @export
 #'
