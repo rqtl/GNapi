@@ -44,7 +44,7 @@ info_datasets <-
     datasets <- list_datasets(group, url)
     if(is.null(datasets)) return(NULL)
 
-    do.call("rbind", lapply(datasets$Short_Abbreviation, info_dataset, url))
+    do.call("rbind_expand", lapply(datasets$Short_Abbreviation, info_dataset, url))
 }
 
 #' Get summary information about a phenotype
@@ -67,7 +67,7 @@ info_pheno <-
     stopifnot(!is.null(group), length(group)==1)
     if(length(trait) > 1) {
         result <- lapply(trait, function(trt) info_pheno(group, trt, url))
-        return(do.call("rbind", result))
+        return(do.call("rbind_expand", result))
     }
 
     result <- query_gn(paste0("trait/", group, "/", trait), url)
