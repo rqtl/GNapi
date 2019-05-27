@@ -30,11 +30,13 @@ For an understanding of the
 The R/GNapi package has a set of functions for connecting to the
 GeneNetwork API to grab different bits of information or data.
 
-- `check_gn()` - Check connection and get current version number.
+- `check_gn()` - Check connection.
 - `list_species()` - List available species.
-- `list_datasets("BXD")` - List available datasets for a given cross
+- `list_groups()` - List available groups of datasets
+- `list_datasets("BXD")` - List available datasets for a given group
   (here, `"BXD"`).
 - `info_dataset("CB_M_1004_P")` - Get meta information about a data set.
+
 - `get_pheno("10646")` - Get phenotype values for a classical trait.
 - `list_probesets("CB_M_1004_P", 100, 101)` - List a slice of
   probesets for gene expression microarray type phenotypes.
