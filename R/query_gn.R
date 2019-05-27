@@ -9,7 +9,7 @@ query_gn <-
 
     result <- httr::GET(url)
     httr::stop_for_status(result)
-    result <- httr::content(result)
+    result <- httr::content(result, encoding="UTF-8")
 
     check_gn_error(result)
 }
