@@ -1,5 +1,6 @@
 # query genenetwork API
 # convert to list if necessary
+#' @importFrom httr GET content stop_for_status
 query_gn <-
     function(query=NULL, url=gnapi_url())
 {

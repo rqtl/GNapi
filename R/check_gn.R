@@ -6,7 +6,6 @@
 #'
 #' @return Character string.
 #'
-#' @importFrom httr GET content stop_for_status
 #' @export
 #'
 #' @examples
