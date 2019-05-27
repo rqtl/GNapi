@@ -45,3 +45,32 @@ info_datasets <-
     gn_list2df( listresult )
 
 }
+
+#' Get summary information about a phenotype
+#'
+#' Get summary information about a phenotype
+#'
+#' @param group Name of a group of datasets
+#' @param trait Trait identifier
+#' @param url The URL for the GeneNetwork API
+#'
+#' @return A data frame with a single row
+#'
+#' @export
+#'
+#' @examples
+#' info_pheno("BXD", "10002")
+info_pheno <-
+    function(group, trait, url=gnapi_url())
+{
+    stopifnot(!is.null(group), length(group)==1)
+    stopifnot(!is.null(trait), length(trait)==1)
+
+    result <- query_gn(paste0("trait/", group, "/", trait), url)
+
+    # convert to a data frame
+    result <- gn_list2df(list(result))
+    rownames(result) <- trait
+
+    result
+}
