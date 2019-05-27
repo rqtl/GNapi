@@ -4,6 +4,7 @@
 query_gn <-
     function(query=NULL, url=gnapi_url())
 {
+    delay_if_necessary()
     if(!is.null(query)) url <- paste0(url, "/", query)
 
     result <- httr::GET(url)

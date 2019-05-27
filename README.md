@@ -46,6 +46,14 @@ GeneNetwork API to grab different bits of information or data.
 - `get_geno("BXD")` - Get genotype data for a given cross.
 - `get_gmap("BXD")` - Get genetic (and physical) marker maps for a given cross.
 
+We enforce a delay between calls to the API, to slow repeated calls
+within a loop. The default is 1 sec; it can be controlled with the
+option `GNapi_delay`. For example, to make the delay 0.5 seconds, use:
+
+```r
+options(GNapi_delay=0.5)
+```
+
 ---
 
 ### License
