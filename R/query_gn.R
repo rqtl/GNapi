@@ -8,26 +8,29 @@ query_gn <-
 
     result <- httr::GET(url)
     httr::stop_for_status(result)
-    httr::content(result)
+    result <- httr::content(result)
+
+    check_gn_error(result)
 }
 
-gn_list_to_df <-
-    function(listresult)
+# check whether the result is an error
+check_gn_error <-
+    function(result)
 {
-    # check that the results could be made into a data frame
-    lengths <- vapply(listresult, length, 0)
-    if(!all(lengths==lengths[1])) {
-        stop("varying lengths in the result")
-    }
+    if(length(result) == 1 && names(result)=="errors" &&
+       length(result$errors)==1 && length(result$errors[[1]])==4 &&
+       all(names(result$errors[[1]]) == c("detail", "source", "status", "title"))) {
+        # looks like an error
 
-    if(!all(vapply(listresult, function(a) all(names(a)==names(listresult[[1]])), FALSE))) {
-        stop("varying names in the result")
+        if(length(result$errors[[1]]$status) == 1 && result$errors[[1]]$status==204 &&
+           length(result$errors[[1]]$title) == 1 && result$errors[[1]]$title=="No Results") {
+            return(NULL)
+        }
+        else {
+            stop("Error ", result$errors[[1]]$status, " ",
+                 result$errors[[1]]$title)
+        }
     }
-
-    # convert result to data frame
-    result <- as.data.frame(lapply(seq_along(listresult[[1]]),
-           function(i) vapply(listresult, "[[", listresult[[1]][[i]], i)))
-    names(result) <- names(listresult[[1]])
 
     result
 }
