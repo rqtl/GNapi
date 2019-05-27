@@ -2,12 +2,12 @@
 % Please edit documentation in R/get_lists.R
 \name{list_datasets}
 \alias{list_datasets}
-\title{List available datasets for a cross}
+\title{List available datasets for a group}
 \usage{
-list_datasets(cross, url = "http://test-gn2.genenetwork.org/api_pre1/")
+list_datasets(group, url = gnapi_url())
 }
 \arguments{
-\item{cross}{Name of cross, as single character string}
+\item{group}{Name of group, as single character string}
 
 \item{url}{URL for GeneNetwork API}
 }
@@ -15,8 +15,11 @@ list_datasets(cross, url = "http://test-gn2.genenetwork.org/api_pre1/")
 A data frame with dataset ID, name, and description
 }
 \description{
-List available datasets for a cross.
+List available datasets for a group.
 }
 \examples{
 list_datasets("BXD")
+}
+\seealso{
+\code{\link[=list_species]{list_species()}}, \code{\link[=list_groups]{list_groups()}}
 }

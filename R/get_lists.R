@@ -4,53 +4,66 @@
 #'
 #' @param url URL for GeneNetwork API
 #'
-#' @return Data frame with number, species common name and formal name.
+#' @return Data frame with columns `FullName`, `Id`, `Name`, and `TaxonomyId`.
 #'
-#' @importFrom httr GET content stop_for_status
 #' @export
 #'
 #' @examples
 #' list_species()
 list_species <-
-    function(url="http://test-gn2.genenetwork.org/api_pre1/")
+    function(url=gnapi_url())
 {
-    result <- httr::GET(paste0(url, "species"))
-    httr::stop_for_status(result)
-    listresult <- httr::content(result)
+    result <- query_gn("species", url)
 
-    # convert to data frame
-    data.frame(id = grab_elements(listresult, 1, as.numeric(NA)),
-               common = grab_elements(listresult, 2, as.character(NA)),
-               species =grab_elements(listresult, 3, as.character(NA)),
-               stringsAsFactors=FALSE)
+    gn_list2df(result)
 }
 
-#' List available datasets for a cross
+
+#' Get list of groups
 #'
-#' List available datasets for a cross.
+#' Get list of available groups
 #'
-#' @param cross Name of cross, as single character string
+#' @param url URL for GeneNetwork API
+#'
+#' @return Data frame with columns `FullName`, `Id`, `Name`, and `TaxonomyId`.
+#'
+#' @seealso [list_species()], [list_datasets()]
+#'
+#' @export
+#'
+#' @examples
+#' list_groups()
+list_groups <-
+    function(url=gnapi_url())
+{
+    result <- query_gn("groups", url)
+
+    gn_list2df(result)
+}
+
+
+#' List available datasets for a group
+#'
+#' List available datasets for a group.
+#'
+#' @param group Name of group, as single character string
 #' @param url URL for GeneNetwork API
 #'
 #' @return A data frame with dataset ID, name, and description
 #'
-#' @importFrom httr GET content stop_for_status
+#' @seealso [list_species()], [list_groups()]
+#'
 #' @export
 #'
 #' @examples
 #' list_datasets("BXD")
 list_datasets <-
-    function(cross, url="http://test-gn2.genenetwork.org/api_pre1/")
+    function(group, url=gnapi_url())
 {
-    # cross should be a single character string
-    stopifnot(!is.null(cross), length(cross) == 1)
+    # group should be a single character string
+    stopifnot(!is.null(group), is.character(group), length(group) == 1)
 
-    result <- httr::GET(paste0(url, "datasets/", cross))
-    httr::stop_for_status(result)
-    listresult <- httr::content(result)
+    result <- query_gn(paste0("datasets/", group), url)
 
-    data.frame(id=vapply(listresult, "[[", 0, 1),
-               name=grab_elements(listresult, 2),
-               description=grab_elements(listresult, 3),
-               stringsAsFactors=FALSE)
+    gn_list2df( result )
 }
