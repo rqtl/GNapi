@@ -1,5 +1,5 @@
 # convert list (indexes as [[row]][[column]] to a data frame
-gn_list2df <-
+list2df <-
     function(listresult)
 {
     if(is.null(listresult)) return(listresult)

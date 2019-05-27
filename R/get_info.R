@@ -42,7 +42,7 @@ info_datasets <-
     if(is.null(datasets)) return(NULL)
 
     listresult <- lapply(datasets$Short_Abbreviation, info_dataset, url)
-    gn_list2df( listresult )
+    list2df( listresult )
 
 }
 
@@ -69,7 +69,7 @@ info_pheno <-
     result <- query_gn(paste0("trait/", group, "/", trait), url)
 
     # convert to a data frame
-    result <- gn_list2df(list(result))
+    result <- list2df(list(result))
     rownames(result) <- trait
 
     result

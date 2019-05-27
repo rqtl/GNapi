@@ -26,7 +26,7 @@ get_pheno <-
         stopifnot(length(trait)==1)
         result <- query_gn(paste0("sample_data/", dataset, "/", trait), url)
         if(length(unique(vapply(result, length, 1)))==1) {
-            result <- gn_list2df(result)
+            result <- list2df(result)
         }
     }
 

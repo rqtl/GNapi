@@ -17,12 +17,12 @@ list_species <-
     if(!is.null(species)) {
         stopifnot(length(species)==1)
         result <- query_gn(paste0("species/", species), url)
-        return(gn_list2df(list(result)))
+        return(list2df(list(result)))
     }
 
     result <- query_gn("species", url)
 
-    gn_list2df(result)
+    list2df(result)
 }
 
 
@@ -52,7 +52,7 @@ list_groups <-
         result <- query_gn("groups", url)
     }
 
-    gn_list2df(result)
+    list2df(result)
 }
 
 
@@ -79,5 +79,5 @@ list_datasets <-
 
     result <- query_gn(paste0("datasets/", group), url)
 
-    gn_list2df( result )
+    list2df( result )
 }
