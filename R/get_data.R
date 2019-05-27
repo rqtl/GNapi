@@ -21,13 +21,12 @@ get_pheno <-
     stopifnot(length(dataset)==1)
 
     if(is.null(trait)) {
-        result <- as.data.frame( query_gn(paste0("sample_data/", dataset), url) )
+        result <- as.data.frame( query_gn(paste0("sample_data/", dataset), url),
+                                 stringsAsFactors=FALSE )
     } else {
         stopifnot(length(trait)==1)
         result <- query_gn(paste0("sample_data/", dataset, "/", trait), url)
-        if(length(unique(vapply(result, length, 1)))==1) {
-            result <- list2df(result)
-        }
+        result <- list2df(result)
     }
 
     result
