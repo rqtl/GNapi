@@ -4,9 +4,11 @@
 \alias{list_groups}
 \title{Get list of groups}
 \usage{
-list_groups(url = gnapi_url())
+list_groups(species = NULL, url = gnapi_url())
 }
 \arguments{
+\item{species}{Optional species name, for just the groups for that species.}
+
 \item{url}{URL for GeneNetwork API}
 }
 \value{
@@ -17,6 +19,7 @@ Get list of available groups
 }
 \examples{
 list_groups()
+list_groups("barley")
 }
 \seealso{
 \code{\link[=list_species]{list_species()}}, \code{\link[=list_datasets]{list_datasets()}}
