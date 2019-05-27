@@ -7,6 +7,8 @@
 #'
 #' @return A list
 #'
+#' @export
+#'
 #' @examples
 #' g <- list_groups()
 #' d <- list_datasets(g$Name[8])
@@ -27,6 +29,8 @@ info_dataset <-
 #' @param url The URL for the GeneNetwork API
 #'
 #' @return A data frame, with one dataset per row
+#'
+#' @export
 #'
 #' @examples
 #' g <- list_groups()

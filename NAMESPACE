@@ -2,6 +2,8 @@
 
 export(check_gn)
 export(gnapi_url)
+export(info_dataset)
+export(info_datasets)
 export(list_datasets)
 export(list_groups)
 export(list_species)
