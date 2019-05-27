@@ -36,6 +36,8 @@ GeneNetwork API to grab different bits of information or data.
 - `list_datasets("BXD")` - List available datasets for a given group
   (here, `"BXD"`).
 - `info_dataset("CB_M_1004_P")` - Get meta information about a data set.
+- `info_datasets("B6D2F2")` - Get meta information about all data sets
+  for a group.
 
 - `get_pheno("10646")` - Get phenotype values for a classical trait.
 - `list_probesets("CB_M_1004_P", 100, 101)` - List a slice of
