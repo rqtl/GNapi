@@ -4,9 +4,11 @@
 \alias{list_species}
 \title{Get list of species}
 \usage{
-list_species(url = gnapi_url())
+list_species(species = NULL, url = gnapi_url())
 }
 \arguments{
+\item{species}{Optional character string, to obtain a particular, single species}
+
 \item{url}{URL for GeneNetwork API}
 }
 \value{
