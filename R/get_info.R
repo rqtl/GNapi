@@ -5,7 +5,7 @@
 #' @param dataset The short abbreviation for the dataset
 #' @param url The URL for the GeneNetwork API
 #'
-#' @return A list
+#' @return A data frame with a single row
 #'
 #' @export
 #'
@@ -18,7 +18,10 @@ info_dataset <-
 {
     stopifnot(!is.null(dataset), length(dataset) == 1)
 
-    query_gn(paste0("dataset/", dataset), url)
+    result <- query_gn(paste0("dataset/", dataset), url)
+
+    # convert to data frame
+    list2df( list(result) )
 }
 
 #' Metadata about all datasets for a group
@@ -28,7 +31,7 @@ info_dataset <-
 #' @param group Name of a group of datasets
 #' @param url The URL for the GeneNetwork API
 #'
-#' @return A data frame, with one dataset per row
+#' @return A list
 #'
 #' @export
 #'
@@ -41,9 +44,7 @@ info_datasets <-
     datasets <- list_datasets(group, url)
     if(is.null(datasets)) return(NULL)
 
-    listresult <- lapply(datasets$Short_Abbreviation, info_dataset, url)
-    list2df( listresult )
-
+    do.call("rbind", lapply(datasets$Short_Abbreviation, info_dataset, url))
 }
 
 #' Get summary information about a phenotype
@@ -51,10 +52,10 @@ info_datasets <-
 #' Get summary information about a phenotype
 #'
 #' @param group Name of a group of datasets
-#' @param trait Trait identifier
+#' @param trait Trait identifier (can be a vector)
 #' @param url The URL for the GeneNetwork API
 #'
-#' @return A data frame with a single row
+#' @return A data frame
 #'
 #' @export
 #'
@@ -64,7 +65,10 @@ info_pheno <-
     function(group, trait, url=gnapi_url())
 {
     stopifnot(!is.null(group), length(group)==1)
-    stopifnot(!is.null(trait), length(trait)==1)
+    if(length(trait) > 1) {
+        result <- lapply(trait, function(trt) info_pheno(group, trt, url))
+        return(do.call("rbind", result))
+    }
 
     result <- query_gn(paste0("trait/", group, "/", trait), url)
 

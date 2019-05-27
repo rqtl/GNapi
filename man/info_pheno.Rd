@@ -9,12 +9,12 @@ info_pheno(group, trait, url = gnapi_url())
 \arguments{
 \item{group}{Name of a group of datasets}
 
-\item{trait}{Trait identifier}
+\item{trait}{Trait identifier (can be a vector)}
 
 \item{url}{The URL for the GeneNetwork API}
 }
 \value{
-A data frame with a single row
+A data frame
 }
 \description{
 Get summary information about a phenotype
