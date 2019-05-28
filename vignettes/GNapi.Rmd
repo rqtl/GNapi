@@ -120,3 +120,7 @@ out <- run_rqtl("BXDPublish", "10015", method="em", interval_mapping=TRUE)
 ```
 
 ### Correlations
+
+```r
+out <- run_correlation("HC_M2_0606_P", "BXDPublish", "1427571_at")
+```

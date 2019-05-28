@@ -84,3 +84,45 @@ run_rqtl <-
 
     read.table(text=result, sep=",", header=TRUE, comment.char="#")
 }
+
+#' Calculate correlations
+#'
+#' Find correlated traits in GeneNetwork
+#'
+#' @param dataset Name of database for the trait (`Short_Abbreviation`)
+#' @param group Target database name to be correlated against
+#' @param trait ID for trait used for correlation
+#' @param type Sample or tissue correlation
+#' @param method Pearson or Spearman correlation
+#' @param n_results Number of results to return
+#'
+#' @return Data frame
+#'
+#' @export
+#'
+#' @examples
+#' out <- run_correlation("HC_M2_0606_P", "BXDPublish", "1427571_at")
+run_correlation <-
+    function(dataset, group, trait, type=c("sample", "tissue"),
+             method=c("pearson", "spearman"), n_results=500,
+             url=gnapi_url())
+{
+    type <- match.arg(type)
+    method <- match.arg(method)
+
+    stopifnot(length(dataset)==1)
+    stopifnot(length(group)==1)
+    stopifnot(length(trait)==1)
+
+    query <- paste0("correlation",
+                    "?trait_id=", trait,
+                    "&db=", dataset,
+                    "&target_db=", group,
+                    "&type=", type,
+                    "&method=", method,
+                    "&return=", n_results)
+
+    result <- query_gn(query, url)
+
+    list2df(result)
+}
