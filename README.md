@@ -40,12 +40,14 @@ GeneNetwork API to grab different bits of information or data.
   for a group.
 - `info_pheno()` - Get summary information for a phenotype
 - `get_pheno("BXD", "10646")` - Get phenotype values for a classical trait.
+- `get_geno("BXD")` - Get genotypes for a group.
+
+Previous things that aren't yet working:
 - `list_probesets("CB_M_1004_P", 100, 101)` - List a slice of
   probesets for gene expression microarray type phenotypes.
 - `get_probeset("CB_M_1004_P", "1445618_at_B")` - Get phenotype values
   for a given probeset in a given dataset.
 - `info_geno("BXD")` - Get meta information for the genotypes for a given cross.
-- `get_geno("BXD")` - Get genotype data for a given cross.
 - `get_gmap("BXD")` - Get genetic (and physical) marker maps for a given cross.
 
 We enforce a delay between calls to the API, to slow repeated calls
