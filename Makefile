@@ -6,6 +6,6 @@ all: doc docs/GNapi.html
 doc:
 	R -e 'devtools::document()'
 
-docs/GNapi.html: vignettes/GNapi.Rmd doc
+docs/GNapi.html: vignettes/GNapi.Rmd
 	R -e "rmarkdown::render('$<')"
 	mv $(<D)/$(@F) $@
