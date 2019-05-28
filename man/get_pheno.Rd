@@ -14,14 +14,14 @@ get_pheno(dataset, trait = NULL, url = gnapi_url())
 \item{url}{The URL for the GeneNetwork API}
 }
 \value{
-A data frame, either with traits as rows and samples as columns,
-or with each sample as a row and columns being detailed information for a single trait
+A data frame, with samples as rows and either traits as columns or
+with the columns being detailed information for a single trait
 }
 \description{
 Get phenotype data
 }
 \examples{
-ph1 <- get_pheno("B30_K_1206_R")
+\donttest{ph1 <- get_pheno("B30_K_1206_R")}
 ph2 <- get_pheno("BXD", "10002")
 ph3 <- get_pheno("HC_M2_0606_P", "1436869_at")
 }
