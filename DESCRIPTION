@@ -10,9 +10,8 @@ Authors@R: c(person("Karl W", "Broman", role=c("aut", "cre"),
 Depends:
     R (>= 3.1.0)
 Imports:
-    httr,
-    readr,
-    jsonlite (>= 0.9.17)
+    utils,
+    httr
 Suggests:
     testthat,
     devtools,

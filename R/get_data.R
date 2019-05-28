@@ -11,6 +11,7 @@
 #'
 #' @seealso [get_geno()]
 #'
+#' @importFrom utils read.table
 #' @export
 #'
 #' @examples
@@ -63,6 +64,7 @@ get_pheno <-
 #'
 #' @return A data frame
 #'
+#' @importFrom utils read.table
 #' @export
 #'
 #' @seealso [get_pheno()], [list_groups()]

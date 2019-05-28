@@ -10,6 +10,7 @@
 #'
 #' @return A data frame
 #'
+#' @importFrom utils read.table
 #' @export
 #'
 #' @examples
@@ -48,6 +49,7 @@ run_gemma <-
 #'
 #' @return A data frame
 #'
+#' @importFrom utils read.table
 #' @export
 #'
 #' @examples
@@ -55,7 +57,7 @@ run_gemma <-
 run_rqtl <-
     function(dataset, trait, method=c("hk", "ehk", "em", "imp", "mr", "mr-imp[", "mr-argmax"),
              model=c("normal", "binary", "2part", "np"),
-             num_perm=0, control_marker=NULL, interval_mapping=FALSE,
+             n_perm=0, control_marker=NULL, interval_mapping=FALSE,
              url=gnapi_url())
 {
     stopifnot(length(trait)==1)
@@ -73,9 +75,9 @@ run_rqtl <-
     if(!is.null(control_marker)) {
         query <- paste0(query, "&control_marker=", control_marker)
     }
-    stopifnot(num_perm >= 0)
-    if(num_perm > 0) {
-        query <- paste0(query, "&num_perm=", num_perm)
+    stopifnot(n_perm >= 0)
+    if(n_perm > 0) {
+        query <- paste0(query, "&num_perm=", n_perm)
     }
 
     result <- query_gn(query, url, output="text")

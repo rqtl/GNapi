@@ -6,7 +6,7 @@
 \usage{
 run_rqtl(dataset, trait, method = c("hk", "ehk", "em", "imp", "mr",
   "mr-imp[", "mr-argmax"), model = c("normal", "binary", "2part", "np"),
-  num_perm = 0, control_marker = NULL, interval_mapping = FALSE,
+  n_perm = 0, control_marker = NULL, interval_mapping = FALSE,
   url = gnapi_url())
 }
 \arguments{
@@ -18,13 +18,13 @@ run_rqtl(dataset, trait, method = c("hk", "ehk", "em", "imp", "mr",
 
 \item{model}{The phenotype model: the usual normal model, a model for binary traits, a two-part model, or non-parametric analysis}
 
+\item{n_perm}{Number of permutations}
+
 \item{control_marker}{Name of marker to use as control}
 
 \item{interval_mapping}{Whether to use interval mapping}
 
 \item{url}{The URL for the GeneNetwork API}
-
-\item{n_perm}{Number of permutations}
 }
 \value{
 A data frame
@@ -33,5 +33,5 @@ A data frame
 Perform a genome scan using R/qtl
 }
 \examples{
-out <- run_gemma("BXDPublish", "10015")
+out <- run_rqtl("BXDPublish", "10015")
 }
