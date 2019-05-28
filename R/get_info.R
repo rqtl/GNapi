@@ -27,7 +27,7 @@ info_dataset <-
         query <- paste0(query, "/", trait)
     }
 
-    result <- query_gn(query, url)
+    result <- query_gn(query, url=url)
 
     # convert to data frame
     list2df( list(result) )
@@ -51,9 +51,11 @@ info_datasets <-
     function(group, url=gnapi_url())
 {
     datasets <- list_datasets(group, url)
+    print(datasets$Short_Abbreviation)
     if(is.null(datasets)) return(NULL)
 
-    do.call("rbind_expand", lapply(datasets$Short_Abbreviation, info_dataset, url))
+    result <- lapply(datasets$Short_Abbreviation, info_dataset, url=url)
+    do.call("rbind_expand", result)
 }
 
 #' Get summary information about a phenotype
@@ -75,11 +77,11 @@ info_pheno <-
 {
     stopifnot(length(group)==1)
     if(length(trait) > 1) {
-        result <- lapply(trait, function(trt) info_pheno(group, trt, url))
+        result <- lapply(trait, function(trt) info_pheno(group, trait=trt, url=url))
         return(do.call("rbind_expand", result))
     }
 
-    result <- query_gn(paste0("trait/", group, "/", trait), url)
+    result <- query_gn(paste0("trait/", group, "/", trait), url=url)
 
     # convert to a data frame
     result <- list2df(list(result))

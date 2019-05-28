@@ -16,11 +16,11 @@ list_species <-
 {
     if(!is.null(species)) {
         stopifnot(length(species)==1)
-        result <- query_gn(paste0("species/", species), url)
+        result <- query_gn(paste0("species/", species), url=url)
         return(list2df(list(result)))
     }
 
-    result <- query_gn("species", url)
+    result <- query_gn("species", url=url)
 
     list2df(result)
 }
@@ -47,9 +47,9 @@ list_groups <-
 {
     if(!is.null(species)) {
         stopifnot(length(species)==1)
-        result <- query_gn(paste0(species, "/groups"), url)
+        result <- query_gn(paste0(species, "/groups"), url=url)
     } else {
-        result <- query_gn("groups", url)
+        result <- query_gn("groups", url=url)
     }
 
     list2df(result)
@@ -77,7 +77,7 @@ list_datasets <-
     # group should be a single character string
     stopifnot(length(group) == 1)
 
-    result <- query_gn(paste0("datasets/", group), url)
+    result <- query_gn(paste0("datasets/", group), url=url)
 
     list2df( result )
 }

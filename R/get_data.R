@@ -24,7 +24,7 @@ get_pheno <-
     stopifnot(length(dataset)==1)
 
     if(is.null(trait)) {
-        result <- query_gn(paste0("sample_data/", dataset), url, output="text")
+        result <- query_gn(paste0("sample_data/", dataset), url=url, output="text")
         result <- read.table(text=result, sep=",", header=TRUE,
                              na.strings="x", stringsAsFactors=FALSE )
 
@@ -39,7 +39,7 @@ get_pheno <-
 
     } else {
         stopifnot(length(trait)==1)
-        result <- query_gn(paste0("sample_data/", dataset, "/", trait), url)
+        result <- query_gn(paste0("sample_data/", dataset, "/", trait), url=url)
         result <- list2df(result)
 
         # sample IDs as row names?
@@ -76,7 +76,7 @@ get_geno <-
 {
     stopifnot(length(group) == 1)
 
-    result <- query_gn(paste0("genotypes/", group), url, output="text")
+    result <- query_gn(paste0("genotypes/", group), url=url, output="text")
 
     # replace @ with #
     result <- gsub("@", "#", result, fixed=TRUE)

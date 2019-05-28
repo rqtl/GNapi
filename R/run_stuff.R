@@ -28,7 +28,7 @@ run_gemma <-
                               "&method=gemma",
                               "&use_loco=", use_loco,
                               "&maf=", maf),
-                       url, output="text")
+                       url=url, output="text")
 
     read.table(text=result, sep=",", header=TRUE, comment.char="#")
 }
@@ -80,7 +80,7 @@ run_rqtl <-
         query <- paste0(query, "&num_perm=", n_perm)
     }
 
-    result <- query_gn(query, url, output="text")
+    result <- query_gn(query, url=url, output="text")
 
     read.table(text=result, sep=",", header=TRUE, comment.char="#")
 }
@@ -123,7 +123,7 @@ run_correlation <-
                     "&method=", method,
                     "&return=", n_results)
 
-    result <- query_gn(query, url)
+    result <- query_gn(query, url=url)
 
     list2df(result)
 }
