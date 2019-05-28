@@ -41,6 +41,8 @@ GeneNetwork API to grab different bits of information or data.
 - `info_pheno()` - Get summary information for a phenotype
 - `get_pheno("BXD", "10646")` - Get phenotype values for a classical trait.
 - `get_geno("BXD")` - Get genotypes for a group.
+- `run_gemma("BXDPublish", "10015")` - Perform a genome scan with [gemma](https://github.com/genetics-statistics/GEMMA)
+- `run_rqtl("BXDPublish", "10015")` - Perform a genome scan with [R/qtl](http://rqtl.org)
 
 Previous things that aren't yet working:
 - `list_probesets("CB_M_1004_P", 100, 101)` - List a slice of
