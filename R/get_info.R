@@ -3,6 +3,7 @@
 #' Get metadata about a dataset
 #'
 #' @param dataset The short abbreviation for the dataset
+#' @param trait Optional trait ID
 #' @param url The URL for the GeneNetwork API
 #'
 #' @return A data frame with a single row
@@ -13,12 +14,20 @@
 #' g <- list_groups()
 #' d <- list_datasets(g$Name[8])
 #' info <- info_dataset(d$Short_Abbreviation[1])
+#'
+#' info_dataset("bxd", "10001")
 info_dataset <-
-    function(dataset, url=gnapi_url())
+    function(dataset, trait=NULL, url=gnapi_url())
 {
     stopifnot(length(dataset) == 1)
 
-    result <- query_gn(paste0("dataset/", dataset), url)
+    query <- paste0("dataset/", dataset)
+    if(!is.null(trait)) {
+        stopifnot(length(trait) == 1)
+        query <- paste0(query, "/", trait)
+    }
+
+    result <- query_gn(query, url)
 
     # convert to data frame
     list2df( list(result) )

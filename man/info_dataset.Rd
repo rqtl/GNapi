@@ -4,10 +4,12 @@
 \alias{info_dataset}
 \title{Metadata about a dataset}
 \usage{
-info_dataset(dataset, url = gnapi_url())
+info_dataset(dataset, trait = NULL, url = gnapi_url())
 }
 \arguments{
 \item{dataset}{The short abbreviation for the dataset}
+
+\item{trait}{Optional trait ID}
 
 \item{url}{The URL for the GeneNetwork API}
 }
@@ -21,4 +23,6 @@ Get metadata about a dataset
 g <- list_groups()
 d <- list_datasets(g$Name[8])
 info <- info_dataset(d$Short_Abbreviation[1])
+
+info_dataset("bxd", "10001")
 }
