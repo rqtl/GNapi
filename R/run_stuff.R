@@ -51,7 +51,7 @@ run_gemma <-
 #' @export
 #'
 #' @examples
-#' out <- run_gemma("BXDPublish", "10015")
+#' out <- run_rqtl("BXDPublish", "10015")
 run_rqtl <-
     function(dataset, trait, method=c("hk", "ehk", "em", "imp", "mr", "mr-imp[", "mr-argmax"),
              model=c("normal", "binary", "2part", "np"),
