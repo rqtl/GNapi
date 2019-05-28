@@ -15,12 +15,15 @@ Imports:
 Suggests:
     testthat,
     devtools,
-    roxygen2
+    roxygen2,
+    knitr,
+    rmarkdown
 License: MIT + file LICENSE
 URL: https://github.com/kbroman/GNapi
 BugReports: https://github.com/kbroman/GNapi/issues
 LazyData: true
 Encoding: UTF-8
 ByteCompile: true
+VignetteBuilder: knitr
 RoxygenNote: 6.1.1
 Roxygen: list(markdown=TRUE)

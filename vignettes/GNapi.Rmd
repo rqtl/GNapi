@@ -1,0 +1,122 @@
+---
+title: R/GNapi User Guide
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{R/GNapi User Guide}
+  %\VignetteEngine{knitr::rmarkdown}
+  \usepackage[utf8](inputenc)
+---
+
+```{r knitr_options, include=FALSE}
+library(knitr)
+opts_chunk$set(fig.width=7, fig.height=4.5,
+               dev.args=list(pointsize=16),
+               eval=FALSE)
+```
+
+The [R/GNapi](https://github.com/kbroman/GNapi) package provides
+access to the [GeneNetwork2](http://gn2.genenetwork.org) API; for
+details on the API, see [its
+documentation](https://github.com/zsloan/genenetwork2/blob/master/api_readme.md).
+The present vignette simply follows that documenation and shows the
+corresponding R facilities.
+
+## Fetch species list
+
+To fetch a list of species:
+
+```r
+list_species()
+```
+
+To get the information for a particular species:
+
+```r
+list_species("mouse")
+```
+
+## Fetch Groups/RISets
+
+List of groups:
+
+```r
+list_groups()
+```
+
+List of groups/RISets for a given species
+
+```r
+list_groups("mouse")
+```
+
+## Fetch genotypes for Group/RIset
+
+```r
+g <- get_geno("BXD")
+```
+
+## Fetch datasets
+
+```r
+list_datasets("bxd")
+```
+
+## Fetch sample data for dataset
+
+```r
+phe <- get_pheno("HSNIH-PalmerPublish")
+```
+
+## Fetch individual dataset info
+
+### For mRNA assay/probeset
+
+```r
+info_dataset("HC_M2_0606_P")
+```
+
+Or provide group/riset
+
+```r
+info_dataset("bxd", "HC_M2_0606_P")
+```
+
+### Fetch individual phenotype info
+
+```r
+info_dataset("bxd", "10001")
+```
+
+## Fetch sample data for a single trait
+
+```r
+ph <- get_pheno("HC_M2_0606_P", "1436869_at")
+```
+
+### For mRNA expression/probeset
+
+```r
+info_pheno("HC_M2_0606_P", "1436869_at")
+```
+
+### For classical phenotypes
+
+```r
+info_pheno("BXD", "10001")
+```
+
+## Analyses
+
+### Gemma
+
+```r
+out <- run_gemma("BXDPublish", "10015", use_loco=TRUE)
+```
+
+### R/qtl
+
+```r
+out <- run_rqtl("BXDPublish", "10015", method="em", interval_mapping=TRUE)
+```
+
+### Correlations
