@@ -75,7 +75,7 @@ list_datasets <-
     function(group, url=gnapi_url())
 {
     # group should be a single character string
-    stopifnot(!is.null(group), is.character(group), length(group) == 1)
+    stopifnot(length(group) == 1)
 
     result <- query_gn(paste0("datasets/", group), url)
 

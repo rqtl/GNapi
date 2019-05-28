@@ -16,7 +16,7 @@
 info_dataset <-
     function(dataset, url=gnapi_url())
 {
-    stopifnot(!is.null(dataset), length(dataset) == 1)
+    stopifnot(length(dataset) == 1)
 
     result <- query_gn(paste0("dataset/", dataset), url)
 
@@ -64,7 +64,7 @@ info_datasets <-
 info_pheno <-
     function(group, trait, url=gnapi_url())
 {
-    stopifnot(!is.null(group), length(group)==1)
+    stopifnot(length(group)==1)
     if(length(trait) > 1) {
         result <- lapply(trait, function(trt) info_pheno(group, trt, url))
         return(do.call("rbind_expand", result))
