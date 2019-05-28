@@ -25,3 +25,6 @@ ph1 <- get_pheno("B30_K_1206_R")
 ph2 <- get_pheno("BXD", "10002")
 ph3 <- get_pheno("HC_M2_0606_P", "1436869_at")
 }
+\seealso{
+\code{\link[=get_geno]{get_geno()}}
+}

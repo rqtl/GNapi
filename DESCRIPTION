@@ -1,6 +1,6 @@
 Package: GNapi
 Version: 0.2-1
-Date: 2019-05-27
+Date: 2019-05-28
 Title: Connection to the GeneNetwork API
 Description: Tools for connecting to the GeneNetwork API.
 Author: Karl W Broman [aut, cre] (<https://orcid.org/0000-0002-4914-6671>)

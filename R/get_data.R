@@ -9,6 +9,8 @@
 #' @return A data frame, either with traits as rows and samples as columns,
 #' or with each sample as a row and columns being detailed information for a single trait
 #'
+#' @seealso [get_geno()]
+#'
 #' @export
 #'
 #' @examples
@@ -30,4 +32,33 @@ get_pheno <-
     }
 
     result
+}
+
+#' Get genotype data
+#'
+#' Get genotype data
+#'
+#' @param group Name of group
+#' @param url The URL for the GeneNetwork API
+#'
+#' @return A data frame
+#'
+#' @export
+#'
+#' @seealso [get_pheno()], [list_groups()]
+#'
+#' @examples
+#' g <- get_geno("QSM")
+get_geno <-
+    function(group, url=gnapi_url())
+{
+    stopifnot(length(group) == 1)
+
+    result <- query_gn(paste0("genotypes/", group), url, output="text")
+
+    # replace @ with #
+    result <- gsub("@", "#", result, fixed=TRUE)
+
+    # read into a data frame
+    read.table(text=result, comment.char="#", sep="\t", header=TRUE)
 }
