@@ -44,17 +44,18 @@ GeneNetwork API to grab different bits of information or data.
 - `run_gemma("BXDPublish", "10015")` - Perform a genome scan with [gemma](https://github.com/genetics-statistics/GEMMA)
 - `run_rqtl("BXDPublish", "10015")` - Perform a genome scan with [R/qtl](http://rqtl.org)
 
-Previous things that aren't yet working:
-- `list_probesets("CB_M_1004_P", 100, 101)` - List a slice of
-  probesets for gene expression microarray type phenotypes.
-- `get_probeset("CB_M_1004_P", "1445618_at_B")` - Get phenotype values
-  for a given probeset in a given dataset.
-- `info_geno("BXD")` - Get meta information for the genotypes for a given cross.
-- `get_gmap("BXD")` - Get genetic (and physical) marker maps for a given cross.
+For further examples, see the [online
+vignette](https://kbroman.org/GNapi/GNapi.html), which is also
+available from within R:
 
-We enforce a delay between calls to the API, to slow repeated calls
-within a loop. The default is 1 sec; it can be controlled with the
-option `GNapi_delay`. For example, to make the delay 0.5 seconds, use:
+```r
+vignette("GNapi")
+```
+
+Note that we enforce a delay between calls to the API, to slow
+repeated calls within a loop. The default is 1 sec; it can be
+controlled with the option `GNapi_delay`. For example, to make the
+delay 0.5 seconds, use:
 
 ```r
 options(GNapi_delay=0.5)
