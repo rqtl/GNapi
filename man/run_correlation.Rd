@@ -20,6 +20,8 @@ run_correlation(dataset, group, trait, type = c("sample", "tissue"),
 \item{method}{Pearson or Spearman correlation}
 
 \item{n_results}{Number of results to return}
+
+\item{url}{The URL for the GeneNetwork API}
 }
 \value{
 Data frame

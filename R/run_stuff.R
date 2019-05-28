@@ -95,6 +95,7 @@ run_rqtl <-
 #' @param type Sample or tissue correlation
 #' @param method Pearson or Spearman correlation
 #' @param n_results Number of results to return
+#' @param url The URL for the GeneNetwork API
 #'
 #' @return Data frame
 #'
