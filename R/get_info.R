@@ -29,6 +29,8 @@ info_dataset <-
 
     result <- query_gn(query, url=url)
 
+    if(is.null(result)) return(result)
+
     # convert to data frame
     list2df( list(result) )
 }
@@ -82,6 +84,8 @@ info_pheno <-
     }
 
     result <- query_gn(paste0("trait/", group, "/", trait), url=url)
+
+    if(is.null(result)) return(result)
 
     # convert to a data frame
     result <- list2df(list(result))
