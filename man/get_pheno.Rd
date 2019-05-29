@@ -21,7 +21,7 @@ with the columns being detailed information for a single trait
 Get phenotype data
 }
 \examples{
-\donttest{ph1 <- get_pheno("B30_K_1206_R")}
+\donttest{ph1 <- get_pheno("BXDPublish")}
 ph2 <- get_pheno("BXD", "10002")
 ph3 <- get_pheno("HC_M2_0606_P", "1436869_at")
 }
