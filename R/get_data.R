@@ -29,6 +29,9 @@ get_pheno <-
                              na.strings="x", stringsAsFactors=FALSE )
 
         # trait names as row names
+        if(length(unique(result[,1])) != nrow(result)) {
+            warning("trait IDs are not unique")
+        }
         rownames(result) <- result[,1]
 
         # samples as rows, traits as columns
