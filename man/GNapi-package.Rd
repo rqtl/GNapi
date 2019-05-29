@@ -18,8 +18,8 @@ Tools for connecting to the GeneNetwork API.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://github.com/kbroman/GNapi}
-  \item Report bugs at \url{https://github.com/kbroman/GNapi/issues}
+  \item \url{https://github.com/rqtl/GNapi}
+  \item Report bugs at \url{https://github.com/rqtl/GNapi/issues}
 }
 
 }

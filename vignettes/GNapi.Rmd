@@ -14,7 +14,7 @@ opts_chunk$set(fig.width=7, fig.height=4.5,
                eval=FALSE)
 ```
 
-The [R/GNapi](https://github.com/kbroman/GNapi) package provides
+The [R/GNapi](https://github.com/rqtl/GNapi) package provides
 access to the [GeneNetwork2](http://gn2.genenetwork.org) API; for
 details on the API, see [its
 documentation](https://github.com/zsloan/genenetwork2/blob/master/api_readme.md).

@@ -1,13 +1,13 @@
 ## R/GNapi - R package to connect to the [GeneNetwork](http://gn2.genenetwork.org/) API
 
-[![Build Status](https://travis-ci.org/kbroman/GNapi.svg?branch=master)](https://travis-ci.org/kbroman/GNapi)
+[![Build Status](https://travis-ci.org/rqtl/GNapi.svg?branch=master)](https://travis-ci.org/rqtl/GNapi)
 
 ---
 
 ### Installation
 
 You can install R/GNapi from
-[GitHub](https://github.com/kbroman/GNapi).
+[GitHub](https://github.com/rqtl/GNapi).
 
 You first need to install the
 [devtools](https://github.com/hadley/devtools).
@@ -17,7 +17,7 @@ You first need to install the
 Then use `devtools::install_github()` to install R/GNapi.
 
     library(devtools)
-    install_github("kbroman/GNapi")
+    install_github("rqtl/GNapi")
 
 ---
 
@@ -66,5 +66,5 @@ options(GNapi_delay=0.5)
 
 ### License
 
-[R/GNapi](https://github.com/kbroman/GNapi) is released under the
+[R/GNapi](https://github.com/rqtl/GNapi) is released under the
 [MIT license](LICENSE.md).

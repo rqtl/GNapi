@@ -19,8 +19,8 @@ Suggests:
     knitr,
     rmarkdown
 License: MIT + file LICENSE
-URL: https://github.com/kbroman/GNapi
-BugReports: https://github.com/kbroman/GNapi/issues
+URL: https://github.com/rqtl/GNapi
+BugReports: https://github.com/rqtl/GNapi/issues
 LazyData: true
 Encoding: UTF-8
 ByteCompile: true
