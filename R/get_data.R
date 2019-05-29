@@ -15,7 +15,7 @@
 #' @export
 #'
 #' @examples
-#' \donttest{ph1 <- get_pheno("B30_K_1206_R")}
+#' \donttest{ph1 <- get_pheno("BXDPublish")}
 #' ph2 <- get_pheno("BXD", "10002")
 #' ph3 <- get_pheno("HC_M2_0606_P", "1436869_at")
 get_pheno <-
@@ -29,13 +29,10 @@ get_pheno <-
                              na.strings="x", stringsAsFactors=FALSE )
 
         # trait names as row names
-        if(is.character(result[,1]) && length(unique(result[,1])) == nrow(result)) {
-            rownames(result) <- result[,1]
-            result <- result[,-1]
-        }
+        rownames(result) <- result[,1]
 
         # samples as rows, traits as columns
-        result <- t(result)
+        result <- t(result[,-1])
 
     } else {
         stopifnot(length(trait)==1)
