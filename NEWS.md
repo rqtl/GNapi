@@ -1,5 +1,10 @@
 ## GNapi 0.3-1 (2019-06-08)
 
+### Minor changes
+
+- Fix `run_gemma()`, `run_rqtl()`, and `run_correlations()` as
+  genenetwork API changed (now giving JSON output)
+
 ### Bug fixes
 
 - `list_groups()` was messed up when a species was provided.

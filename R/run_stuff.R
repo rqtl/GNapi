@@ -28,9 +28,9 @@ run_gemma <-
                               "&method=gemma",
                               "&use_loco=", use_loco,
                               "&maf=", maf),
-                       url=url, output="text")
+                       url=url, output="parsed")
 
-    read.table(text=result, sep=",", header=TRUE, comment.char="#")
+    list2df(result)
 }
 
 
@@ -80,9 +80,9 @@ run_rqtl <-
         query <- paste0(query, "&num_perm=", n_perm)
     }
 
-    result <- query_gn(query, url=url, output="text")
+    result <- query_gn(query, url=url, output="parsed")
 
-    read.table(text=result, sep=",", header=TRUE, comment.char="#")
+    list2df(result)
 }
 
 #' Calculate correlations
@@ -99,6 +99,7 @@ run_rqtl <-
 #'
 #' @return Data frame
 #'
+#' @importFrom jsonlite fromJSON
 #' @export
 #'
 #' @examples
@@ -123,7 +124,8 @@ run_correlation <-
                     "&method=", method,
                     "&return=", n_results)
 
-    result <- query_gn(query, url=url)
+    result <- query_gn(query, url=url, output="text")
+    result <- gsub("#_strains", "n_strains", result, fixed=TRUE)
 
-    list2df(result)
+    jsonlite::fromJSON(result)
 }
