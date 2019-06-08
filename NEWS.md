@@ -9,6 +9,8 @@
 
 - `list_groups()` was messed up when a species was provided.
 
+- Fix `get_geno()` so it returns `NULL` if the result has no data.
+
 
 ## GNapi 0.2-2 (2019-05-29)
 
