@@ -47,7 +47,7 @@ list_groups <-
 {
     if(!is.null(species)) {
         stopifnot(length(species)==1)
-        result <- query_gn(paste0(species, "/groups"), url=url)
+        result <- query_gn(paste0("groups/", species), url=url)
     } else {
         result <- query_gn("groups", url=url)
     }

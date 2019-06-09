@@ -81,6 +81,13 @@ get_geno <-
     # replace @ with #
     result <- gsub("@", "#", result, fixed=TRUE)
 
+    # check if there's any input
+    lines <- strsplit(result, "\\r*\\n")[[1]]
+    if(all(grepl("^#", lines))) {
+        message("The results have no data.")
+        return(NULL)
+    }
+
     # read into a data frame
     read.table(text=result, comment.char="#", sep="\t", header=TRUE)
 }
