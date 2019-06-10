@@ -4,12 +4,14 @@
 \alias{info_pheno}
 \title{Get summary information about a phenotype}
 \usage{
-info_pheno(group, trait, url = gnapi_url())
+info_pheno(group, trait = NULL, limit = NULL, url = gnapi_url())
 }
 \arguments{
 \item{group}{Name of a group of datasets}
 
 \item{trait}{Trait identifier (can be a vector)}
+
+\item{limit}{Limit on number of traits to return (if \code{trait} is \code{NULL})}
 
 \item{url}{The URL for the GeneNetwork API}
 }
@@ -21,4 +23,7 @@ Get summary information about a phenotype
 }
 \examples{
 info_pheno("BXD", "10002")
+info_pheno("HC_M2_0606_P", limit=10)
+info_pheno("HC_M2_0606_P", "1436869_at")
+info_pheno("HXBBXH", limit=10)
 }

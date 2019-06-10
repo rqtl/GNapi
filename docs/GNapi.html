@@ -137,6 +137,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">list_datasets</span>(<span class="st">&quot;bxd&quot;</span>, <span class="st">&quot;10001&quot;</span>)</code></pre></div>
 </div>
 </div>
+<div id="fetch-trait-information" class="section level2">
+<h2>Fetch trait information</h2>
+<p>This is mostly information about QTL location (LRS score and marker).</p>
+<p>You can get all traits within a microarray dataset, possibly limiting the results to some number.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">info_pheno</span>(<span class="st">&quot;HC_M2_0606_P&quot;</span>, <span class="dt">limit=</span><span class="dv">10</span>)</code></pre></div>
+<p>Or you can use a group name, again possibly limiting the results to some number.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">info_pheno</span>(<span class="st">&quot;HXBBXH&quot;</span>, <span class="dt">limit=</span><span class="dv">10</span>)</code></pre></div>
+<p>Or you can get the information for a single trait.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">info_pheno</span>(<span class="st">&quot;HC_M2_0606_P&quot;</span>, <span class="st">&quot;1436869_at&quot;</span>)</code></pre></div>
+</div>
 <div id="fetch-sample-data-for-a-single-trait" class="section level2">
 <h2>Fetch sample data for a single trait</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ph &lt;-<span class="st"> </span><span class="kw">get_pheno</span>(<span class="st">&quot;HC_M2_0606_P&quot;</span>, <span class="st">&quot;1436869_at&quot;</span>)</code></pre></div>

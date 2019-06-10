@@ -17,6 +17,8 @@
 - Remove `info_dataset()` and `info_datasets()`; for both can be just
   use `list_datasets()`.
 
+- Include `limit` argument for `info_pheno()`.
+
 ### Bug fixes
 
 - `list_groups()` was messed up when a species was provided.

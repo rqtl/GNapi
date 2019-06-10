@@ -102,6 +102,31 @@ list_datasets("bxd", "HC_M2_0606_P")
 list_datasets("bxd", "10001")
 ```
 
+## Fetch trait information
+
+This is mostly information about QTL location (LRS score and marker).
+
+You can get all traits within a microarray dataset, possibly limiting the results
+to some number.
+
+```r
+info_pheno("HC_M2_0606_P", limit=10)
+```
+
+Or you can use a group name, again possibly limiting the results to
+some number.
+
+```r
+info_pheno("HXBBXH", limit=10)
+```
+
+Or you can get the information for a single trait.
+
+```r
+info_pheno("HC_M2_0606_P", "1436869_at")
+```
+
+
 ## Fetch sample data for a single trait
 
 ```r
