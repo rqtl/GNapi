@@ -10,5 +10,5 @@
 #' @export
 gnapi_url <- function()
 {
-    "http://gn2-zach.genenetwork.org/api/v_pre1"
+    "http://gn2.genenetwork.org/api/v_pre1"
 }

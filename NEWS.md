@@ -1,8 +1,13 @@
-## GNapi 0.3-1 (2019-06-08)
+## GNapi 0.3-2 (2019-06-10)
+
+### Major changes
+
+- Switched to the proper API url,
+  <https://gn2.genenetwork.org/api/pre_v1>
 
 ### Minor changes
 
-- Fix `run_gemma()`, `run_rqtl()`, and `run_correlations()` as
+- Fixed `run_gemma()`, `run_rqtl()`, and `run_correlations()` as
   genenetwork API changed (now giving JSON output)
 
 ### Bug fixes
