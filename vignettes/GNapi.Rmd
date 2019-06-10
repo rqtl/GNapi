@@ -82,24 +82,24 @@ list_datasets("bxd", "HC_M2_0606_P")
 phe <- get_pheno("HSNIH-PalmerPublish")
 ```
 
-## Fetch individual dataset info
 
-### For mRNA assay/probeset
+
+### Information for mRNA assay/probeset
 
 ```r
-info_dataset("HC_M2_0606_P")
+list_datasets(dataset="HC_M2_0606_P")
 ```
 
 Or provide group/riset
 
 ```r
-info_dataset("bxd", "HC_M2_0606_P")
+list_datasets("bxd", "HC_M2_0606_P")
 ```
 
 ### Fetch individual phenotype info
 
 ```r
-info_dataset("bxd", "10001")
+list_datasets("bxd", "10001")
 ```
 
 ## Fetch sample data for a single trait

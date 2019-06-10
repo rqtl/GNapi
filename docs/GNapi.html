@@ -118,23 +118,23 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="fetch-datasets" class="section level2">
 <h2>Fetch datasets</h2>
+<p>List datasets for a particular group.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">list_datasets</span>(<span class="st">&quot;bxd&quot;</span>)</code></pre></div>
+<p>List a particular dataset.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">list_datasets</span>(<span class="st">&quot;bxd&quot;</span>, <span class="st">&quot;HC_M2_0606_P&quot;</span>)</code></pre></div>
 </div>
 <div id="fetch-sample-data-for-dataset" class="section level2">
 <h2>Fetch sample data for dataset</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">phe &lt;-<span class="st"> </span><span class="kw">get_pheno</span>(<span class="st">&quot;HSNIH-PalmerPublish&quot;</span>)</code></pre></div>
-</div>
-<div id="fetch-individual-dataset-info" class="section level2">
-<h2>Fetch individual dataset info</h2>
-<div id="for-mrna-assayprobeset" class="section level3">
-<h3>For mRNA assay/probeset</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">info_dataset</span>(<span class="st">&quot;HC_M2_0606_P&quot;</span>)</code></pre></div>
+<div id="information-for-mrna-assayprobeset" class="section level3">
+<h3>Information for mRNA assay/probeset</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">list_datasets</span>(<span class="dt">dataset=</span><span class="st">&quot;HC_M2_0606_P&quot;</span>)</code></pre></div>
 <p>Or provide group/riset</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">info_dataset</span>(<span class="st">&quot;bxd&quot;</span>, <span class="st">&quot;HC_M2_0606_P&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">list_datasets</span>(<span class="st">&quot;bxd&quot;</span>, <span class="st">&quot;HC_M2_0606_P&quot;</span>)</code></pre></div>
 </div>
 <div id="fetch-individual-phenotype-info" class="section level3">
 <h3>Fetch individual phenotype info</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">info_dataset</span>(<span class="st">&quot;bxd&quot;</span>, <span class="st">&quot;10001&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">list_datasets</span>(<span class="st">&quot;bxd&quot;</span>, <span class="st">&quot;10001&quot;</span>)</code></pre></div>
 </div>
 </div>
 <div id="fetch-sample-data-for-a-single-trait" class="section level2">

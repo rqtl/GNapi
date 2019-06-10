@@ -86,14 +86,25 @@ list_groups <-
 #'
 #' @examples
 #' list_datasets("BXD")
-list_datasets <-
-    function(group, dataset=NULL, url=gnapi_url())
-{
-    # group should be a single character string
-    stopifnot(length(group) == 1)
+#' list_datasets("BXD", "HC_M2_0606_P")
+#' list_datasets(dataset="HC_M2_0606_P")
+#'
+#' g <- list_groups()
+#' d <- list_datasets(g$Name[8])
+#' list_datasets(dataset=d$Short_Abbreviation[1])
+#'
+#' list_datasets("bxd", "10001")
 
-    if(!is.null(dataset) && dataset != "") {
-        result <- query_gn(paste0("dataset/", group, "/", dataset),
+list_datasets <-
+    function(group=NULL, dataset=NULL, url=gnapi_url())
+{
+    if(!is.null(dataset) && dataset != "") { # here dataset/ otherwise datasets/
+        query <- "dataset/"
+        if(!is.null(group) && group != "") {
+            query <- paste0(query, group, "/")
+        }
+
+        result <- query_gn(paste0(query, "/", dataset),
                            url=url)
         if(is.null(result)) return(NULL)
         return(as.data.frame(result))

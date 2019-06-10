@@ -14,6 +14,9 @@
 
 - `list_datasets()` can be used to get information for a specific dataset.
 
+- Remove `info_dataset()` and `info_datasets()`; for both can be just
+  use `list_datasets()`.
+
 ### Bug fixes
 
 - `list_groups()` was messed up when a species was provided.

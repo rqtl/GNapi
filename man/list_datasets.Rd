@@ -4,7 +4,7 @@
 \alias{list_datasets}
 \title{List available datasets for a group}
 \usage{
-list_datasets(group, dataset = NULL, url = gnapi_url())
+list_datasets(group = NULL, dataset = NULL, url = gnapi_url())
 }
 \arguments{
 \item{group}{Name of group, as single character string}
@@ -21,6 +21,14 @@ List available datasets for a group.
 }
 \examples{
 list_datasets("BXD")
+list_datasets("BXD", "HC_M2_0606_P")
+list_datasets(dataset="HC_M2_0606_P")
+
+g <- list_groups()
+d <- list_datasets(g$Name[8])
+list_datasets(dataset=d$Short_Abbreviation[1])
+
+list_datasets("bxd", "10001")
 }
 \seealso{
 \code{\link[=list_species]{list_species()}}, \code{\link[=list_groups]{list_groups()}}
