@@ -23,13 +23,13 @@ corresponding R facilities.
 
 ## Fetch species list
 
-To fetch a list of species:
+To fetch the list of species available in the GeneNetwork database:
 
 ```r
 list_species()
 ```
 
-To get the information for a particular species:
+You can also get the information for a single species:
 
 ```r
 list_species("mouse")
@@ -37,16 +37,16 @@ list_species("mouse")
 
 ## Fetch Groups/RISets
 
-List of groups:
+To get a list of groups (for example, RIL sets) across all species:
 
 ```r
 list_groups()
 ```
 
-List of groups/RISets for a given species
+You can also get the list of groups for a single species:
 
 ```r
-list_groups("mouse")
+list_groups("rat")
 ```
 
 ## Fetch genotypes for Group/RIset
