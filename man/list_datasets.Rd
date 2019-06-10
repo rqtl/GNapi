@@ -4,10 +4,12 @@
 \alias{list_datasets}
 \title{List available datasets for a group}
 \usage{
-list_datasets(group, url = gnapi_url())
+list_datasets(group, dataset = NULL, url = gnapi_url())
 }
 \arguments{
 \item{group}{Name of group, as single character string}
+
+\item{dataset}{Optional name of a specific dataset}
 
 \item{url}{URL for GeneNetwork API}
 }

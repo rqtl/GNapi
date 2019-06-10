@@ -56,7 +56,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 </style>
 <script>
-// apply pandoc div.sourceCode style to pre.sourceCode
+// apply pandoc div.sourceCode style to pre.sourceCode instead
 (function() {
   var sheets = document.styleSheets;
   for (var i = 0; i < sheets.length; i++) {
@@ -98,17 +98,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>The <a href="https://github.com/rqtl/GNapi">R/GNapi</a> package provides access to the <a href="http://gn2.genenetwork.org">GeneNetwork2</a> API; for details on the API, see <a href="https://github.com/zsloan/genenetwork2/blob/master/api_readme.md">its documentation</a>. The present vignette simply follows that documenation and shows the corresponding R facilities.</p>
 <div id="fetch-species-list" class="section level2">
 <h2>Fetch species list</h2>
-<p>To fetch a list of species:</p>
+<p>To fetch the list of species available in the GeneNetwork database:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">list_species</span>()</code></pre></div>
-<p>To get the information for a particular species:</p>
+<p>You can also get the information for a single species:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">list_species</span>(<span class="st">&quot;mouse&quot;</span>)</code></pre></div>
 </div>
 <div id="fetch-groupsrisets" class="section level2">
 <h2>Fetch Groups/RISets</h2>
-<p>List of groups:</p>
+<p>To get a list of groups (for example, RIL sets) across all species:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">list_groups</span>()</code></pre></div>
-<p>List of groups/RISets for a given species</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">list_groups</span>(<span class="st">&quot;mouse&quot;</span>)</code></pre></div>
+<p>You can also get the list of groups for a single species:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">list_groups</span>(<span class="st">&quot;rat&quot;</span>)</code></pre></div>
+<p>You can also get the information for a specific group:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">list_groups</span>(<span class="st">&quot;rat&quot;</span>, <span class="st">&quot;HSNIH-Palmer&quot;</span>)</code></pre></div>
 </div>
 <div id="fetch-genotypes-for-groupriset" class="section level2">
 <h2>Fetch genotypes for Group/RIset</h2>

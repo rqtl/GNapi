@@ -20,3 +20,6 @@ Get list of available species
 \examples{
 list_species()
 }
+\seealso{
+\code{\link[=list_groups]{list_groups()}}, \code{\link[=list_datasets]{list_datasets()}}
+}

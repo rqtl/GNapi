@@ -10,6 +10,10 @@
 - Fixed `run_gemma()`, `run_rqtl()`, and `run_correlations()` as
   genenetwork API changed (now giving JSON output)
 
+- `list_groups()` can be used to get information for a specific group.
+
+- `list_datasets()` can be used to get information for a specific dataset.
+
 ### Bug fixes
 
 - `list_groups()` was messed up when a species was provided.
