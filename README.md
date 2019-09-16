@@ -46,7 +46,7 @@ GeneNetwork API to grab different bits of information or data.
 - `get_pheno("BXD", "10646")` - Get phenotype values for a classical trait.
 - `get_geno("BXD")` - Get genotypes for a group.
 - `run_gemma("BXDPublish", "10015")` - Perform a genome scan with [gemma](https://github.com/genetics-statistics/GEMMA)
-- `run_rqtl("BXDPublish", "10015")` - Perform a genome scan with [R/qtl](http://rqtl.org)
+- `run_rqtl("BXDPublish", "10015")` - Perform a genome scan with [R/qtl](https://rqtl.org)
 - `run_correlation("HC_M2_0606_P", "BXDPublish", "1427571_at")` - Finds traits that are correlated with a given trait.
 
 For further examples, see the [online
