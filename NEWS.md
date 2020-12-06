@@ -10,7 +10,7 @@
 ### Major changes
 
 - Switched to the proper API url,
-  <https://gn2.genenetwork.org/api/pre_v1>
+  `gn2.genenetwork.org/api/pre_v1`
 
 ### Minor changes
 
