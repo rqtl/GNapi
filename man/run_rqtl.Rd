@@ -39,5 +39,5 @@ A data frame
 Perform a genome scan using R/qtl
 }
 \examples{
-out <- run_rqtl("BXDPublish", "10015")
+\dontrun{out <- run_rqtl("BXDPublish", "10015")}
 }
