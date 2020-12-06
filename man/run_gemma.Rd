@@ -4,8 +4,7 @@
 \alias{run_gemma}
 \title{Run gemma}
 \usage{
-run_gemma(dataset, trait, use_loco = FALSE, maf = 0.01,
-  url = gnapi_url())
+run_gemma(dataset, trait, use_loco = FALSE, maf = 0.01, url = gnapi_url())
 }
 \arguments{
 \item{dataset}{ID for dataset being used (\code{Short_Abbreviation})}

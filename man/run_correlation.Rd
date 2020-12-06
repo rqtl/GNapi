@@ -4,9 +4,15 @@
 \alias{run_correlation}
 \title{Calculate correlations}
 \usage{
-run_correlation(dataset, group, trait, type = c("sample", "tissue"),
-  method = c("pearson", "spearman"), n_results = 500,
-  url = gnapi_url())
+run_correlation(
+  dataset,
+  group,
+  trait,
+  type = c("sample", "tissue"),
+  method = c("pearson", "spearman"),
+  n_results = 500,
+  url = gnapi_url()
+)
 }
 \arguments{
 \item{dataset}{Name of database for the trait (\code{Short_Abbreviation})}
