@@ -1,6 +1,6 @@
 ## R/GNapi - R package to connect to the [GeneNetwork](http://gn2.genenetwork.org/) API
 
-[![Build Status](https://travis-ci.org/rqtl/GNapi.svg?branch=master)](https://travis-ci.org/rqtl/GNapi)
+[![R build status](https://github.com/rqtl/GNapi/workflows/R-CMD-check/badge.svg)](https://github.com/rqtl/GNapi/actions)
 
 ---
 
