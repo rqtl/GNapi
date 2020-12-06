@@ -1,3 +1,10 @@
+## GNapi 0.3-3 (2020-12-06)
+
+### Minor changes
+
+- Fix a typo in an argument option in `run_rqtl()`.
+
+
 ## GNapi 0.3-2 (2019-06-10)
 
 ### Major changes

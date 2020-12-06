@@ -4,10 +4,16 @@
 \alias{run_rqtl}
 \title{Run R/qtl}
 \usage{
-run_rqtl(dataset, trait, method = c("hk", "ehk", "em", "imp", "mr",
-  "mr-imp[", "mr-argmax"), model = c("normal", "binary", "2part", "np"),
-  n_perm = 0, control_marker = NULL, interval_mapping = FALSE,
-  url = gnapi_url())
+run_rqtl(
+  dataset,
+  trait,
+  method = c("hk", "ehk", "em", "imp", "mr", "mr-imp", "mr-argmax"),
+  model = c("normal", "binary", "2part", "np"),
+  n_perm = 0,
+  control_marker = NULL,
+  interval_mapping = FALSE,
+  url = gnapi_url()
+)
 }
 \arguments{
 \item{dataset}{ID for dataset being used (\code{Short_Abbreviation})}

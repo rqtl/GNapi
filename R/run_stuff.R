@@ -55,7 +55,7 @@ run_gemma <-
 #' @examples
 #' out <- run_rqtl("BXDPublish", "10015")
 run_rqtl <-
-    function(dataset, trait, method=c("hk", "ehk", "em", "imp", "mr", "mr-imp[", "mr-argmax"),
+    function(dataset, trait, method=c("hk", "ehk", "em", "imp", "mr", "mr-imp", "mr-argmax"),
              model=c("normal", "binary", "2part", "np"),
              n_perm=0, control_marker=NULL, interval_mapping=FALSE,
              url=gnapi_url())

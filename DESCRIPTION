@@ -1,6 +1,6 @@
 Package: GNapi
-Version: 0.3-2
-Date: 2019-06-10
+Version: 0.3-3
+Date: 2020-12-06
 Title: Connection to the GeneNetwork API
 Description: Tools for connecting to the GeneNetwork API.
 Author: Karl W Broman [aut, cre] (<https://orcid.org/0000-0002-4914-6671>)
@@ -26,5 +26,5 @@ LazyData: true
 Encoding: UTF-8
 ByteCompile: true
 VignetteBuilder: knitr
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1
 Roxygen: list(markdown=TRUE)
