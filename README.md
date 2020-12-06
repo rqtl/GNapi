@@ -42,7 +42,7 @@ GeneNetwork API to grab different bits of information or data.
 - `info_dataset("CB_M_1004_P")` - Get meta information about a data set.
 - `info_datasets("B6D2F2")` - Get meta information about all data sets
   for a group.
-- `info_pheno()` - Get summary information for a phenotype
+- `info_pheno("BXD", "10038")` - Get summary information for a phenotype
 - `get_pheno("BXD", "10646")` - Get phenotype values for a classical trait.
 - `get_geno("BXD")` - Get genotypes for a group.
 - `run_gemma("BXDPublish", "10015")` - Perform a genome scan with [gemma](https://github.com/genetics-statistics/GEMMA)
