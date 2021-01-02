@@ -10,13 +10,13 @@ You can install R/GNapi from
 [GitHub](https://github.com/rqtl/GNapi).
 
 You first need to install the
-[devtools](https://github.com/hadley/devtools).
+[remotes](https://remotes.r-lib.org) package.
 
-    install.packages("devtools")
+    install.packages("remotes")
 
-Then use `devtools::install_github()` to install R/GNapi.
+Then use `remotes::install_github()` to install R/GNapi.
 
-    library(devtools)
+    library(remotes)
     install_github("rqtl/GNapi")
 
 ---
