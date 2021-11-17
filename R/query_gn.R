@@ -12,7 +12,8 @@ query_gn <-
     result <- httr::GET(url)
     httr::stop_for_status(result)
     result <- httr::content(result, encoding=encoding, as=output)
-
+    result[unlist(lapply(result, is.null))] = NA
+        
     check_gn_error(result)
 }
 
