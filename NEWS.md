@@ -1,3 +1,10 @@
+## GNapi 0.3-4 (2021-11-17)
+
+### Bug fixes
+
+- Small change in `query_gn()` to change NULL output to NA.
+
+
 ## GNapi 0.3-3 (2020-12-06)
 
 ### Minor changes
