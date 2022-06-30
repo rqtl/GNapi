@@ -26,7 +26,7 @@ Then use `remotes::install_github()` to install R/GNapi.
 For an understanding of the
 [GeneNetwork](http://gn2.genenetwork.org) API, see
 [its
-documentation](https://github.com/zsloan/genenetwork2/blob/master/api_readme.md),
+documentation](https://github.com/genenetwork/genenetwork2/blob/testing/api_readme.md),
 as well as [Zachary Sloan](https://github.com/zsloan?tab=repositories)'s
 [tutorial](https://github.com/zsloan/GN2-REST-Notebook/blob/master/REST_guide.ipynb).
 
