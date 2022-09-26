@@ -4,12 +4,14 @@
 \alias{get_geno}
 \title{Get genotype data}
 \usage{
-get_geno(group, url = gnapi_url())
+get_geno(group, url = gnapi_url(), format = "geno")
 }
 \arguments{
 \item{group}{Name of group}
 
 \item{url}{The URL for the GeneNetwork API}
+
+\item{format}{The group's genotypes format}
 }
 \value{
 A data frame
