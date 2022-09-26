@@ -33,7 +33,6 @@ list_species <-
 #' Get list of available groups
 #'
 #' @param species Optional species name, for just the groups for that species.
-#' @param group Optional name for a specific group
 #' @param url URL for GeneNetwork API
 #'
 #' @return Data frame with columns `FullName`, `Id`, `Name`, and `TaxonomyId`.
@@ -45,21 +44,10 @@ list_species <-
 #' @examples
 #' list_groups()
 #' list_groups("barley")
-#' list_groups("rat", "HSNIH-Palmer")
-#' list_groups(group="HSNIH-Palmer")
 list_groups <-
-    function(species=NULL, group=NULL, url=gnapi_url())
+    function(species=NULL, url=gnapi_url())
 {
-    if(!is.null(group) && group != "") { # note this uses group/ rather than groups/
-        query <- "group/"
-        if(!is.null(species) && species != "") {
-            query <- paste0(query, "/", species)
-        }
-        result <- query_gn(paste0(query, "/", group), url=url)
-        if(is.null(result)) return(NULL)
-        return(as.data.frame(result))
-    }
-    else if(!is.null(species) && species != "") {
+    if(!is.null(species) && species != "") {
         stopifnot(length(species)==1)
         result <- query_gn(paste0("groups/", species), url=url)
     } else {
