@@ -24,5 +24,5 @@ A data frame
 Perform a genome scan using gemma
 }
 \examples{
-out <- run_gemma("BXDPublish", "10015")
+\dontrun{out <- run_gemma("BXDPublish", "10015")}
 }
