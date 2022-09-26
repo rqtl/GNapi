@@ -76,7 +76,7 @@ get_geno <-
 {
     stopifnot(length(group) == 1)
 
-    result <- query_gn(paste0("genotypes/", group), url=url, output="text")
+    result <- query_gn(paste0("genotypes/", group, ".geno"), url=url, output="text")
 
     # replace @ with #
     result <- gsub("@", "#", result, fixed=TRUE)
