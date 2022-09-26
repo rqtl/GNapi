@@ -61,6 +61,7 @@ get_pheno <-
 #'
 #' @param group Name of group
 #' @param url The URL for the GeneNetwork API
+#' @param format The group's genotypes format
 #'
 #' @return A data frame
 #'
@@ -72,11 +73,11 @@ get_pheno <-
 #' @examples
 #' g <- get_geno("QSM")
 get_geno <-
-    function(group, url=gnapi_url())
+    function(group, url=gnapi_url(), format = "geno")
 {
     stopifnot(length(group) == 1)
 
-    result <- query_gn(paste0("genotypes/", group), url=url, output="text")
+    result <- query_gn(paste0("genotypes/", group, ".", format), url=url, output="text")
 
     # replace @ with #
     result <- gsub("@", "#", result, fixed=TRUE)
