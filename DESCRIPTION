@@ -1,5 +1,5 @@
 Package: GNapi
-Version: 0.3-5
+Version: 0.3-6
 Date: 2022-09-26
 Title: Connection to the GeneNetwork API
 Description: Tools for connecting to the GeneNetwork API.

@@ -105,25 +105,22 @@ list_datasets("bxd", "10001")
 ## Fetch trait information
 
 This is mostly information about QTL location (LRS score and marker).
-
-You can get all traits within a microarray dataset, possibly limiting the results
-to some number.
-
-```r
-info_pheno("HC_M2_0606_P", limit=10)
-```
-
-Or you can use a group name, again possibly limiting the results to
-some number.
-
-```r
-info_pheno("HXBBXH", limit=10)
-```
-
-Or you can get the information for a single trait.
+You need to provide a group and a trait, such as a probeset on a microarray:
 
 ```r
 info_pheno("HC_M2_0606_P", "1436869_at")
+```
+
+Or a traditional phenotype:
+
+```r
+info_pheno("BXD", "10002")
+```
+
+You can provide a vector of trait identifiers:
+
+```r
+info_pheno("BXD", c("10002", "10010", "10100"))
 ```
 
 
