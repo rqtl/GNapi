@@ -1,3 +1,24 @@
+## GNapi 0.3-7 (2022-10-25)
+
+### Bug fixes
+
+- `run_gemma()` and `run_rqtl()` are working again.
+
+- Trapped additional errors by looking for `Error:` in title of
+  output. (in new internal function `error_in_title()`)
+
+
+## GNapi 0.3-6 (2022-09-26)
+
+### Bug fixes
+
+- `get_geno()` is working again
+
+- `info_pheno()` can no longer get a list of traits within a group
+
+- `list_groups()` no longer takes an individual group name
+
+
 ## GNapi 0.3-4 (2021-11-17)
 
 ### Bug fixes

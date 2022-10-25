@@ -14,7 +14,7 @@
 #' @export
 #'
 #' @examples
-#' \dontrun{out <- run_gemma("BXDPublish", "10015")}
+#' out <- run_gemma("HC_M2_0606_P", "1418701_at")
 run_gemma <-
     function(dataset, trait, use_loco=FALSE, maf=0.01, url=gnapi_url())
 {
@@ -30,7 +30,7 @@ run_gemma <-
                               "&maf=", maf),
                        url=url, output="parsed")
 
-    list2df(result)
+    list2df(result[[1]])  # not sure why we need the [[1]]
 }
 
 
@@ -43,7 +43,7 @@ run_gemma <-
 #' @param method Indicates whether to use the EM algorithm, imputation, Haley-Knott regression, the extended Haley-Knott method, or marker regression.
 #' @param model The phenotype model: the usual normal model, a model for binary traits, a two-part model, or non-parametric analysis
 #' @param n_perm Number of permutations
-#' @param control_marker Name of marker to use as control
+#' @param control_marker Name of marker to use as a covariate
 #' @param interval_mapping Whether to use interval mapping
 #' @param url The URL for the GeneNetwork API
 #'
@@ -53,7 +53,7 @@ run_gemma <-
 #' @export
 #'
 #' @examples
-#' \dontrun{out <- run_rqtl("BXDPublish", "10015")}
+#' out <- run_rqtl("HC_M2_0606_P", "1418701_at")
 run_rqtl <-
     function(dataset, trait, method=c("hk", "ehk", "em", "imp", "mr", "mr-imp", "mr-argmax"),
              model=c("normal", "binary", "2part", "np"),

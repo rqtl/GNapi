@@ -26,7 +26,7 @@ run_rqtl(
 
 \item{n_perm}{Number of permutations}
 
-\item{control_marker}{Name of marker to use as control}
+\item{control_marker}{Name of marker to use as a covariate}
 
 \item{interval_mapping}{Whether to use interval mapping}
 
@@ -39,5 +39,5 @@ A data frame
 Perform a genome scan using R/qtl
 }
 \examples{
-\dontrun{out <- run_rqtl("BXDPublish", "10015")}
+out <- run_rqtl("HC_M2_0606_P", "1418701_at")
 }
