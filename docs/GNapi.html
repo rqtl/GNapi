@@ -120,13 +120,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   for (var i = 0; i < sheets.length; i++) {
     if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
     try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
+    var j = 0;
+    while (j < rules.length) {
       var rule = rules[j];
       // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -384,16 +391,14 @@ species:</p>
 </div>
 <div id="fetch-trait-information" class="section level2">
 <h2>Fetch trait information</h2>
-<p>This is mostly information about QTL location (LRS score and
-marker).</p>
-<p>You can get all traits within a microarray dataset, possibly limiting
-the results to some number.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">info_pheno</span>(<span class="st">&quot;HC_M2_0606_P&quot;</span>, <span class="at">limit=</span><span class="dv">10</span>)</span></code></pre></div>
-<p>Or you can use a group name, again possibly limiting the results to
-some number.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">info_pheno</span>(<span class="st">&quot;HXBBXH&quot;</span>, <span class="at">limit=</span><span class="dv">10</span>)</span></code></pre></div>
-<p>Or you can get the information for a single trait.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">info_pheno</span>(<span class="st">&quot;HC_M2_0606_P&quot;</span>, <span class="st">&quot;1436869_at&quot;</span>)</span></code></pre></div>
+<p>This is mostly information about QTL location (LRS score and marker).
+You need to provide a group and a trait, such as a probeset on a
+microarray:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">info_pheno</span>(<span class="st">&quot;HC_M2_0606_P&quot;</span>, <span class="st">&quot;1436869_at&quot;</span>)</span></code></pre></div>
+<p>Or a traditional phenotype:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">info_pheno</span>(<span class="st">&quot;BXD&quot;</span>, <span class="st">&quot;10002&quot;</span>)</span></code></pre></div>
+<p>You can provide a vector of trait identifiers:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">info_pheno</span>(<span class="st">&quot;BXD&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;10002&quot;</span>, <span class="st">&quot;10010&quot;</span>, <span class="st">&quot;10100&quot;</span>))</span></code></pre></div>
 </div>
 <div id="fetch-sample-data-for-a-single-trait" class="section level2">
 <h2>Fetch sample data for a single trait</h2>

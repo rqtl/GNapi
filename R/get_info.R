@@ -4,7 +4,6 @@
 #'
 #' @param group Name of a group of datasets
 #' @param trait Trait identifier (can be a vector)
-#' @param limit Limit on number of traits to return (if `trait` is `NULL`)
 #' @param url The URL for the GeneNetwork API
 #'
 #' @return A data frame
@@ -13,20 +12,13 @@
 #'
 #' @examples
 #' info_pheno("BXD", "10002")
-#' info_pheno("HC_M2_0606_P", limit=10)
 #' info_pheno("HC_M2_0606_P", "1436869_at")
-#' info_pheno("HXBBXH", limit=10)
 info_pheno <-
-    function(group, trait=NULL, limit=NULL, url=gnapi_url())
+    function(group, trait, url=gnapi_url())
 {
     stopifnot(length(group)==1)
-    if(is.null(trait) || trait == "") {
-        query <- paste0("traits/", group)
-        if(!is.null(limit)) {
-            query <- paste0(query, "?limit_to=", limit)
-        }
-        result <- query_gn(query, url)
-        return(list2df(result))
+    if(is.null(trait) || (length(trait)==1 && trait == "")) {
+        stop("trait must be provided; can be a vector")
     }
 
     if(length(trait) > 1) {

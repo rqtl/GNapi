@@ -14,7 +14,7 @@
 #' @export
 #'
 #' @examples
-#' out <- run_gemma("BXDPublish", "10015")
+#' \dontrun{out <- run_gemma("BXDPublish", "10015")}
 run_gemma <-
     function(dataset, trait, use_loco=FALSE, maf=0.01, url=gnapi_url())
 {
