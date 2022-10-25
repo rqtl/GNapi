@@ -11,12 +11,35 @@ query_gn <-
 
     result <- httr::GET(url)
     httr::stop_for_status(result)
+
+    if(error_in_title(result, encoding)) {
+        stop(attr(error_in_title(result, encoding), "error_text"))
+    }
+
     result <- httr::content(result, encoding=encoding, as=output)
 
     result[vapply(result, is.null, TRUE)] <- NA  # added to avoid having as.data.frame(result) crash
 
     check_gn_error(result)
 }
+
+# if the result is a web page with Error: in the title
+error_in_title <-
+    function(result, encoding="UTF-8")
+{
+    result_text <- httr::content(result, encoding=encoding, as="text")
+    error <- regexpr("<title>Error:.*</title>", result_text)
+    if(error < 0) return(FALSE)
+    else {
+        error_text <- substr(result_text, error+13, error+attr(error, "match.length")-23)
+        error_text <- gsub("&#34;", '"', error_text)
+        error_text <- gsub("&#39;", "'", error_text)
+        result <- TRUE
+        attr(result, "error_text") <- error_text
+        return(result)
+    }
+}
+
 
 # check whether the result is an error
 check_gn_error <-
