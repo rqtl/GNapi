@@ -360,32 +360,30 @@ species:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list_groups</span>()</span></code></pre></div>
 <p>You can also get the list of groups for a single species:</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list_groups</span>(<span class="st">&quot;rat&quot;</span>)</span></code></pre></div>
-<p>You can also get the information for a specific group:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list_groups</span>(<span class="st">&quot;rat&quot;</span>, <span class="st">&quot;HSNIH-Palmer&quot;</span>)</span></code></pre></div>
 </div>
 <div id="fetch-genotypes-for-groupriset" class="section level2">
 <h2>Fetch genotypes for Group/RIset</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">get_geno</span>(<span class="st">&quot;BXD&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">get_geno</span>(<span class="st">&quot;BXD&quot;</span>)</span></code></pre></div>
 </div>
 <div id="fetch-datasets" class="section level2">
 <h2>Fetch datasets</h2>
 <p>List datasets for a particular group.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list_datasets</span>(<span class="st">&quot;bxd&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list_datasets</span>(<span class="st">&quot;bxd&quot;</span>)</span></code></pre></div>
 <p>List a particular dataset.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list_datasets</span>(<span class="st">&quot;bxd&quot;</span>, <span class="st">&quot;HC_M2_0606_P&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list_datasets</span>(<span class="st">&quot;bxd&quot;</span>, <span class="st">&quot;HC_M2_0606_P&quot;</span>)</span></code></pre></div>
 </div>
 <div id="fetch-sample-data-for-dataset" class="section level2">
 <h2>Fetch sample data for dataset</h2>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>phe <span class="ot">&lt;-</span> <span class="fu">get_pheno</span>(<span class="st">&quot;HSNIH-PalmerPublish&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>phe <span class="ot">&lt;-</span> <span class="fu">get_pheno</span>(<span class="st">&quot;HSNIH-PalmerPublish&quot;</span>)</span></code></pre></div>
 <div id="information-for-mrna-assayprobeset" class="section level3">
 <h3>Information for mRNA assay/probeset</h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list_datasets</span>(<span class="at">dataset=</span><span class="st">&quot;HC_M2_0606_P&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list_datasets</span>(<span class="at">dataset=</span><span class="st">&quot;HC_M2_0606_P&quot;</span>)</span></code></pre></div>
 <p>Or provide group/riset</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list_datasets</span>(<span class="st">&quot;bxd&quot;</span>, <span class="st">&quot;HC_M2_0606_P&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list_datasets</span>(<span class="st">&quot;bxd&quot;</span>, <span class="st">&quot;HC_M2_0606_P&quot;</span>)</span></code></pre></div>
 </div>
 <div id="fetch-individual-phenotype-info" class="section level3">
 <h3>Fetch individual phenotype info</h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list_datasets</span>(<span class="st">&quot;bxd&quot;</span>, <span class="st">&quot;10001&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">list_datasets</span>(<span class="st">&quot;bxd&quot;</span>, <span class="st">&quot;10001&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="fetch-trait-information" class="section level2">
@@ -393,37 +391,37 @@ species:</p>
 <p>This is mostly information about QTL location (LRS score and marker).
 You need to provide a group and a trait, such as a probeset on a
 microarray:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">info_pheno</span>(<span class="st">&quot;HC_M2_0606_P&quot;</span>, <span class="st">&quot;1436869_at&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">info_pheno</span>(<span class="st">&quot;HC_M2_0606_P&quot;</span>, <span class="st">&quot;1436869_at&quot;</span>)</span></code></pre></div>
 <p>Or a traditional phenotype:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">info_pheno</span>(<span class="st">&quot;BXD&quot;</span>, <span class="st">&quot;10002&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">info_pheno</span>(<span class="st">&quot;BXD&quot;</span>, <span class="st">&quot;10002&quot;</span>)</span></code></pre></div>
 <p>You can provide a vector of trait identifiers:</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">info_pheno</span>(<span class="st">&quot;BXD&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;10002&quot;</span>, <span class="st">&quot;10010&quot;</span>, <span class="st">&quot;10100&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">info_pheno</span>(<span class="st">&quot;BXD&quot;</span>, <span class="fu">c</span>(<span class="st">&quot;10002&quot;</span>, <span class="st">&quot;10010&quot;</span>, <span class="st">&quot;10100&quot;</span>))</span></code></pre></div>
 </div>
 <div id="fetch-sample-data-for-a-single-trait" class="section level2">
 <h2>Fetch sample data for a single trait</h2>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>ph <span class="ot">&lt;-</span> <span class="fu">get_pheno</span>(<span class="st">&quot;HC_M2_0606_P&quot;</span>, <span class="st">&quot;1436869_at&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>ph <span class="ot">&lt;-</span> <span class="fu">get_pheno</span>(<span class="st">&quot;HC_M2_0606_P&quot;</span>, <span class="st">&quot;1436869_at&quot;</span>)</span></code></pre></div>
 <div id="for-mrna-expressionprobeset" class="section level3">
 <h3>For mRNA expression/probeset</h3>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">info_pheno</span>(<span class="st">&quot;HC_M2_0606_P&quot;</span>, <span class="st">&quot;1436869_at&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">info_pheno</span>(<span class="st">&quot;HC_M2_0606_P&quot;</span>, <span class="st">&quot;1436869_at&quot;</span>)</span></code></pre></div>
 </div>
 <div id="for-classical-phenotypes" class="section level3">
 <h3>For classical phenotypes</h3>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">info_pheno</span>(<span class="st">&quot;BXD&quot;</span>, <span class="st">&quot;10001&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">info_pheno</span>(<span class="st">&quot;BXD&quot;</span>, <span class="st">&quot;10001&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 <div id="analyses" class="section level2">
 <h2>Analyses</h2>
 <div id="gemma" class="section level3">
 <h3>Gemma</h3>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">run_gemma</span>(<span class="st">&quot;BXDPublish&quot;</span>, <span class="st">&quot;10015&quot;</span>, <span class="at">use_loco=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">run_gemma</span>(<span class="st">&quot;BXDPublish&quot;</span>, <span class="st">&quot;10015&quot;</span>, <span class="at">use_loco=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </div>
 <div id="rqtl" class="section level3">
 <h3>R/qtl</h3>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">run_rqtl</span>(<span class="st">&quot;BXDPublish&quot;</span>, <span class="st">&quot;10015&quot;</span>, <span class="at">method=</span><span class="st">&quot;em&quot;</span>, <span class="at">interval_mapping=</span><span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">run_rqtl</span>(<span class="st">&quot;BXDPublish&quot;</span>, <span class="st">&quot;10015&quot;</span>, <span class="at">method=</span><span class="st">&quot;em&quot;</span>, <span class="at">interval_mapping=</span><span class="cn">TRUE</span>)</span></code></pre></div>
 </div>
 <div id="correlations" class="section level3">
 <h3>Correlations</h3>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">run_correlation</span>(<span class="st">&quot;HC_M2_0606_P&quot;</span>, <span class="st">&quot;BXDPublish&quot;</span>, <span class="st">&quot;1427571_at&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>out <span class="ot">&lt;-</span> <span class="fu">run_correlation</span>(<span class="st">&quot;HC_M2_0606_P&quot;</span>, <span class="st">&quot;BXDPublish&quot;</span>, <span class="st">&quot;1427571_at&quot;</span>)</span></code></pre></div>
 </div>
 </div>
 

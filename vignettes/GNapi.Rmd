@@ -49,12 +49,6 @@ You can also get the list of groups for a single species:
 list_groups("rat")
 ```
 
-You can also get the information for a specific group:
-
-```r
-list_groups("rat", "HSNIH-Palmer")
-```
-
 ## Fetch genotypes for Group/RIset
 
 ```r

@@ -4,6 +4,9 @@
 
 - Updated URL for GeneNetwork API
 
+- Remove an example from the vignette that no longer works:
+  "get the information for a specific group," `list_groups("rat", "HSNIH-Palmer")`
+
 
 ## GNapi 0.3-7 (2022-10-25)
 
