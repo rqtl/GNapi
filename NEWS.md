@@ -1,3 +1,10 @@
+## GNapi 0.3-8 (2023-07-26)
+
+### Minor changes
+
+- Updated URL for GeneNetwork API
+
+
 ## GNapi 0.3-7 (2022-10-25)
 
 ### Bug fixes
