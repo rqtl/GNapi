@@ -1,6 +1,6 @@
-## R/GNapi - R package to connect to the [GeneNetwork](http://gn2.genenetwork.org/) API
+## R/GNapi - R package to connect to the [GeneNetwork](https://genenetwork.org/) API
 
-[![R build status](https://github.com/rqtl/GNapi/workflows/R-CMD-check/badge.svg)](https://github.com/rqtl/GNapi/actions)
+[![R-CMD-check](https://github.com/rqtl/GNapi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rqtl/GNapi/actions/workflows/R-CMD-check.yaml)
 
 ---
 
@@ -24,7 +24,7 @@ Then use `remotes::install_github()` to install R/GNapi.
 ### Usage
 
 For an understanding of the
-[GeneNetwork](http://gn2.genenetwork.org) API, see
+[GeneNetwork](https://genenetwork.org) API, see
 [its
 documentation](https://github.com/genenetwork/genenetwork2/blob/testing/api_readme.md),
 as well as [Zachary Sloan](https://github.com/zsloan?tab=repositories)'s
