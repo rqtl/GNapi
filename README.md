@@ -1,6 +1,6 @@
 ## R/GNapi - R package to connect to the [GeneNetwork](https://genenetwork.org/) API
 
-[![R build status](https://github.com/rqtl/GNapi/workflows/R-CMD-check/badge.svg)](https://github.com/rqtl/GNapi/actions)
+[![R-CMD-check](https://github.com/rqtl/GNapi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rqtl/GNapi/actions/workflows/R-CMD-check.yaml)
 
 ---
 
