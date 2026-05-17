@@ -1,24 +1,27 @@
 ## R/GNapi - R package to connect to the [GeneNetwork](https://genenetwork.org/) API
 
 [![R-CMD-check](https://github.com/rqtl/GNapi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rqtl/GNapi/actions/workflows/R-CMD-check.yaml)
+[![r-universe badge](https://kbroman.r-universe.dev/GNapi/badges/version)](https://kbroman.r-universe.dev/GNapi)
+[![zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8192582.svg)](https://doi.org/10.5281/zenodo.8192582)
 
 ---
 
 ### Installation
 
-You can install R/GNapi from
-[GitHub](https://github.com/rqtl/GNapi).
+Install [GNapi](https://github.com/rqtl/GNapi) from [R
+universe](https://kbroman.r-universe.dev/GNapi):
 
-You first need to install the
-[remotes](https://remotes.r-lib.org) package.
+```r
+install.packages("GNapi", repos="https://kbroman.r-universe.dev")
+```
 
-    install.packages("remotes")
+Alternatively, install it from GitHub with the
+[remotes](https://remotes.r-lib.org) package:
 
-Then use `remotes::install_github()` to install R/GNapi.
-
-    library(remotes)
-    install_github("rqtl/GNapi")
-
+```r
+#install.packages("remotes")
+library(remotes)
+install_github("rqtl/GNapi")
 ---
 
 ### Usage
