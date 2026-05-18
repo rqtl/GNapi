@@ -22,6 +22,8 @@ Alternatively, install it from GitHub with the
 #install.packages("remotes")
 library(remotes)
 install_github("rqtl/GNapi")
+```
+
 ---
 
 ### Usage
