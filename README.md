@@ -1,7 +1,7 @@
 ## R/GNapi - R package to connect to the [GeneNetwork](https://genenetwork.org/) API
 
 [![R-CMD-check](https://github.com/rqtl/GNapi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rqtl/GNapi/actions/workflows/R-CMD-check.yaml)
-[![r-universe badge](https://kbroman.r-universe.dev/GNapi/badges/version)](https://kbroman.r-universe.dev/GNapi)
+[![r-universe badge](https://rqtl.r-universe.dev/GNapi/badges/version)](https://rqtl.r-universe.dev/GNapi)
 [![zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8192582.svg)](https://doi.org/10.5281/zenodo.8192582)
 
 ---
@@ -9,10 +9,10 @@
 ### Installation
 
 Install [GNapi](https://github.com/rqtl/GNapi) from [R
-universe](https://kbroman.r-universe.dev/GNapi):
+universe](https://rqtl.r-universe.dev/GNapi):
 
 ```r
-install.packages("GNapi", repos="https://kbroman.r-universe.dev")
+install.packages("GNapi", repos="https://rqtl.r-universe.dev")
 ```
 
 Alternatively, install it from GitHub with the
