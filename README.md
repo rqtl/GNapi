@@ -4,6 +4,9 @@
 [![r-universe badge](https://rqtl.r-universe.dev/GNapi/badges/version)](https://rqtl.r-universe.dev/GNapi)
 [![zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8192582.svg)](https://doi.org/10.5281/zenodo.8192582)
 
+[R/GNapi](https://github.com/rqtl/GNapi) is an R package for connecting to the
+[GeneNetwork](https://genenetwork.org/) API.
+
 ---
 
 ### Installation
