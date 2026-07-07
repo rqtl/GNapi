@@ -14,9 +14,9 @@ opts_chunk$set(fig.width=7, fig.height=4.5,
                eval=FALSE)
 ```
 
-[![R-CMD-check](https://github.com/rqtl/GNapi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/rqtl/GNapi/actions/workflows/R-CMD-check.yaml)
-[![r-universe badge](https://rqtl.r-universe.dev/GNapi/badges/version)](https://rqtl.r-universe.dev/GNapi)
-[![zenodo DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.8192582.svg)](https://doi.org/10.5281/zenodo.8192582)
+<link rel=stylesheet type="text/css" href="https://kbroman.org/stylesheets/kbroman_vignette.css"></script>
+
+<!-- paste badges here -->
 
 The [R/GNapi](https://github.com/rqtl/GNapi) package provides
 access to the [GeneNetwork2](https://genenetwork.org) API; for
